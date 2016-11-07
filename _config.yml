@@ -8,5 +8,7 @@ baseurl:          /
 
 markdown: kramdown
 
+paginate: 3
+
 github:
   repo:           https://github.com/gaoshu883/gaoshu883.github.io
