@@ -1,26 +1,14 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygments
-
-# Permalinks
-permalink:        pretty
-relative_permalinks: true
-
 # Setup
 title:            Lu3Xiang
+email:            gaoshu883@163.com
 tagline:          'Personal Blog'
 description:      '分享前端学习心得，体悟，感想，总结，随笔。作者 <a href="http://weibo.com/gaoshu883" target="_blank">@三水声香</a>.'
 url:              http://lu3xiang.top
 baseurl:          /
 
-author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+markdown: kramdown
 
 paginate:         5
 
-# Custom vars
-version:          2.1.0
-
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/gaoshu883/gaoshu883.github.io
