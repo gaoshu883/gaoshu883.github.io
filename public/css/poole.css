@@ -119,6 +119,9 @@ ul, ol, dl {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+li {
+  list-style: none;
+}
 
 dt {
   font-weight: bold;
@@ -259,7 +262,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -342,6 +345,12 @@ tbody tr:nth-child(odd) th {
 .page-title,
 .post-title {
   margin-top: 0;
+}
+.post-title {
+  font-size: 1.5rem;
+}
+.page-title {
+  margin-bottom: 2rem;
 }
 
 /* Meta data line below post title */
