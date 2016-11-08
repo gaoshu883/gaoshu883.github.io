@@ -133,6 +133,15 @@ html {
   }
 }
 
+/* Sidebar copyright */
+.sidebar-copyright {
+  position: relative;
+  top: -1.5rem;
+  font-size: 0.75rem;
+  text-align: right;
+  color: #444343;
+
+}
 
 /* Container
  *
@@ -159,7 +168,6 @@ html {
     margin-right: 4rem;
   }
 }
-
 
 /*
  * Reverse layout
