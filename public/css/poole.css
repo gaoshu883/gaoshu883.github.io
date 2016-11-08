@@ -74,8 +74,7 @@ a strong {
   color: inherit;
 }
 /* `:focus` is linked to `:hover` for basic accessibility */
-a:hover,
-a:focus {
+a:hover {
   text-decoration: underline;
 }
 
@@ -355,10 +354,29 @@ tbody tr:nth-child(odd) th {
 
 /* Meta data line below post title */
 .post-date {
-  display: block;
   margin-top: -.5rem;
   margin-bottom: 1rem;
   color: #9a9a9a;
+}
+
+/*Post category on every post page*/
+.post-category {
+  margin: 0 5px;
+}
+.post-category a {
+  margin: 0 2px;
+  padding: 0 5px;
+  border: 1px solid #268bd2;
+}
+.post-category a:hover {
+  text-decoration: none;
+  background-color: #268bd2;
+  color: #fff;
+}
+
+/*Meta data about post content*/
+.post-content {
+  margin-top: 15px;
 }
 
 /* Related posts */
@@ -386,6 +404,10 @@ tbody tr:nth-child(odd) th {
   color: inherit;
 }
 
+/*Meta data for about page*/
+.about-time {
+  text-align: right;
+}
 
 /*
  * Pagination
@@ -437,3 +459,4 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
+

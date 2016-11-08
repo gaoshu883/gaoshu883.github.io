@@ -13,8 +13,12 @@ title: Home
     </h1>
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content | truncatewords: 120 }}
+    <span class="post-category">
+      {% for category in post.categories %}
+        <a href="{{ site.baseurl | append: '2_category.html#' | append: category }}">{{ category }} </a>
+      {% endfor %}
+    </span>
+    {{ post.content | truncate: 350 }}
   </div>
   {% endfor %}
 </div>

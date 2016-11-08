@@ -5,8 +5,13 @@
     </h1>
     <div class="post-meta">
       <time>{{ post.date | date: "%b %-d, %Y" }}</time>
+      <span class="post-category">
+        {% for category in post.categories %}
+          <a href="{{ site.baseurl | append: '2_category.html#' | append: category }}">{{ category }} </a>
+        {% endfor %}
+      </span>
     </div>
   </header>
 
-  <p><a href="{{ post.url | append: '#post' }}" title="Permalink to: {{ post.title }}" class="read-more">{{ post.content | strip_html | truncatewords: 30 }}</a></p>
+  <p><a href="{{ post.url | append: '#post' }}" title="Permalink to: {{ post.title }}" class="read-more">{{ post.content | strip_html | truncate:130 }}</a></p>
 </article>
