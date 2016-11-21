@@ -19,7 +19,7 @@ category: ['javascript']
 + this绑定的对象是人类直觉判定当前调用方法或者构造函数时的焦点对象。
 
 ### 2. this不指向以及指向哪些对象？
-![](https://github.com/gaoshu883/gaoshu883.github.io/blob/master/images/2016-11-21-this/1.png)
+![](../../../../images/2016-11-21-this/1.png)
 
 1. 不是this存在的那个函数对象
 2. 不是this存在的那个函数对象所在的对象字面量
@@ -27,7 +27,7 @@ category: ['javascript']
 4. 通常也不是函数的实例（有例外）
 5. 而是点操作符左手边的那个对象
 
-![](https://github.com/gaoshu883/gaoshu883.github.io/blob/master/images/2016-11-21-this/2.png)
+![](../../../../images/2016-11-21-this/2.png)
 
 > The object that a function is looked up upon when it's being invoked, that object is what the keyword, this, will be bound to.
 
@@ -64,7 +64,7 @@ this存在默认值的设定也是因为**一切方法都是对象的方法，�
 
 假设setTimeout这个函数的源代码别定义在timers.js文件中，它的内部代码如下所示：整个函数的参数包括一个回调函数和一个等待的时间参数。具体所要实现的内容是：先等待一定的时间，然后再执行回调函数。那么问题出现了，究竟setTimeout函数会向cb回调函数中传递什么数值呢？实际上，setTimeout无从知道你想向cb回调函数中传入什么数值，所以，最终setTimeout也就什么参数都不传递，而是直接调用这个回调函数。所以，占位参数就会被赋予undefined。那么this参数呢？先回想一下我们之前用过的this参数确定规则。这个规则是：函数调用时点操作符左手边定律。那么我们究竟要根据下图中的哪一行代码使用这个规则呢？那就是cb()这行代码，但是我们发现它没有点操作符，所以根据规则，我们知道它的this将被设置为默认值Global。最终，我们发现，我们假设的这个setTimeout函数无法应用dot call 的this绑定规则，当然也没有没有使用call绑定规则，以至于this只能绑定默认值。
 
-![](https://github.com/gaoshu883/gaoshu883.github.io/blob/master/images/2016-11-21-this/4.png)
+![](../../../../images/2016-11-21-this/4.png)
 
 现在问题升级了，如果我们向setTimeout函数中传入的回调函数是以某对象的方法的形式出现的呢？这时this的绑定值会发生改变吗？提前告知答案：依旧是Global对象。为什么？始终必须铭记的是，如何确定this绑定的值——要去函数调用的地方去找，而不是去函数定义或者函数作为对象方法的地方去找。那么问题的关键仍然是在setTimeout源代码中。源码中并没有颜色对象，也就是说它只认回调函数，并不认识你传递过来的颜色对象。既然它不认识，那么就会直接忽略它。
 
@@ -72,11 +72,11 @@ this存在默认值的设定也是因为**一切方法都是对象的方法，�
 
 因为源码中函数调用的地儿，并没有点操作符，所以，不管你传递的是fn，还是r.method，结果都一样，this只能绑定Global对象，也就是默认值。
 
-![](https://github.com/gaoshu883/gaoshu883.github.io/blob/master/images/2016-11-21-this/5.png)
+![](../../../../images/2016-11-21-this/5.png)
 
 类似setImeout函数中传入函数参数存在的问题其实很常见，结果总会出乎你的意料。回调函数是某个系统中的固有设计，当你向这个系统传入函数参数，那这个函数就会在这个系统中被调用，而且如何调用都是系统本来就规定好的，不是你能控制的。这种情况下，你就无法随你所愿地将this值绑定到特定的对象上。所以，当你将函数作为参数传入另一个函数中时，一定要十分小心地对待函数参数的绑定问题，不然，结果就会出乎意料。不过，还是有一个简单的方法让你脱离这复杂的参数绑定问题的苦海，如下所示：
 
-![](https://github.com/gaoshu883/gaoshu883.github.io/blob/master/images/2016-11-21-this/6.png)
+![](../../../../images/2016-11-21-this/6.png)
 
 向setTimeout函数中传入一个匿名函数，这个匿名函数什么都不做，各种参数都是默认值。然后，你在这个匿名函数内部放上你的真正目的函数，现在各种参数值的绑定问题，就都由你说了算。之所以可以这样做，是因为当我们按照这种方式传递函数参数后，setTimeout系统执行回调函数后，实际上就把外层的匿名函数执行了而已。匿名函数一旦执行，setTimeout系统也就没有威力了，匿名函数中的实体函数再执行时，就不受setTimeout系统的参数约束了。
 

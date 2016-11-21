@@ -10,11 +10,11 @@ category: ['javascript']
 
 #### 1. Lexical Scope
 为了更好地讲述这个故事，我需要一段代码，如下图所示，这是一段简化后的代码，假设它是可运行的，因为它只是一个片段。根据lexical scope分析，结果如图中不同颜色区域所示，整段代码就存在着绿红蓝的lexical scope。这是程序员根据语言规则，理解并划分出来的词法作用域。当然，前面我们已经说得很多了，这并不是代码运行时Interpreter所创建出来的作用域。
-![](https://github.com/gaoshu883/gaoshu883.github.io/blob/master/images/2016-11-21-scopes/1.png)
+![](../../../../images/2016-11-21-scopes/1.png)
 
 #### 2. Execution Context
 当执行程序，正式进入代码的世界。Interpreter开始工作，环境随之被创建，就是这么得迅速。如下图所示，最左侧的黄色箭头代表Interpreter，右侧是其工作时建立的execution context，也即工作环境。
-![](https://github.com/gaoshu883/gaoshu883.github.io/blob/master/images/2016-11-21-scopes/2.png)
+![](../../../../images/2016-11-21-scopes/2.png)
 
 Interpreter开始读代码，这就是它的基本工作。**读代码又要做哪些事情呢？**那就要看代码中都有些什么东西了：标识符、运算符、操作符等等。
 
@@ -29,18 +29,18 @@ Interpreter开始读代码，这就是它的基本工作。**读代码又要做�
 一段源代码：
 
 
-![](https://github.com/gaoshu883/gaoshu883.github.io/blob/master/images/2016-11-21-scopes/3.png)
+![](../../../../images/2016-11-21-scopes/3.png)
 
 声明提升后（Interpreter读完这段代码首先存储的数据）：
 
 
-![](https://github.com/gaoshu883/gaoshu883.github.io/blob/master/images/2016-11-21-scopes/4.png)
+![](../../../../images/2016-11-21-scopes/4.png)
 
 从上面storage system存储的数据中就能看出，变量声明提升之后，存储的是undefined（如果没有初始化），而函数声明的情况不同，因为函数声明时，sum中存储的便是指向函数体的指针。
 
 
 也就是说，当Interpreter进入某个工作环境后，首先在当前环境中进行identifier scanning，看看有哪些var声明的变量，以及又有哪些函数声明。当它发现了这些信号后，就会把对应的标识符按照声明提升的规定、一定的顺序、以及key-value的数据结构将标识符以及相对应的数据存储在内存中。这个内存其实就是in-memory storage system，存储的内容整体叫做变量对象。Current execution context就是Interpreter当前进行variable lookingup的scope。
-![](https://github.com/gaoshu883/gaoshu883.github.io/blob/master/images/2016-11-21-scopes/5.png)
+![](../../../../images/2016-11-21-scopes/5.png)
 
 #### 3. Scope Chain
 程序中关键内容不仅仅是标识符以及其中保存的数据。计算机程序的目的是解决问题，所以关键还得能够操作这些数据才行。操作数据就涉及到运算符、操作符等等，在我们这里并不说明这方面的内容，还是从标识符的角度去说明问题，看看在操作过程中会对标识符进行哪些操作吧。很重要的一点是：**标识符的查询和解析。**
