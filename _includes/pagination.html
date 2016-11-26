@@ -1,21 +1,16 @@
-{% if paginator.total_pages > 1 %}
-<nav class="pagination" role="pagination">
-  <ul>
-    {% assign url = site.baseurl | append: "/blog/" %}
-    {% if paginator.previous_page %}
-      {% if paginator.previous_page > 1 %}
-        {% assign prev = 'page/' | append: paginator.previous_page %}
-      {% endif %}
-      <li><a class="prev btn btn-ghost" href="{{ url | append: prev }}" title="Articles new">&laquo; Prev</a></li>
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
     {% else %}
-      <li><span class="prev btn btn-ghost disabled">&laquo; Prev</span></li>
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
     {% endif %}
-    <li><span class="page-number">Page {{paginator.page}} of {{paginator.total_pages}}</span></li>
-    {% if paginator.next_page %}
-      <li><a class="next btn btn-ghost" href="{{ url | append: 'page/' | append: paginator.next_page }}" title="Articles old">Next &raquo;</a></li>
-    {% else %}
-      <li><span class="next btn btn-ghost disabled">Next &raquo;</span></li>
-    {% endif %}
-  </ul>
-</nav>
-{% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>

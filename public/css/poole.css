@@ -50,12 +50,7 @@ body {
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-}
-@media (min-width: 38em) {
-  html {
-    font-size: 20px;
-  }
+  line-height: 1.75;
 }
 
 body {
@@ -105,7 +100,8 @@ h4, h5, h6 {
 /* Body text */
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  text-indent: 2rem;
 }
 
 strong {
@@ -261,7 +257,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .lead {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 300;
 }
 
@@ -288,7 +284,6 @@ tbody tr:nth-child(odd) th {
  */
 
 .container {
-  max-width: 38rem;
   padding-left:  1rem;
   padding-right: 1rem;
   margin-left:  auto;
@@ -376,7 +371,7 @@ tbody tr:nth-child(odd) th {
 
 /*Meta data about post content*/
 .post-content {
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
 /* Related posts */
