@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="posts">
-  {% for post in paginator.posts %}
+  {% for post in site.posts %}
   <div class="post">
     <h1 class="post-title">
       <a href="{{ post.url }}">
@@ -18,9 +18,6 @@ title: Home
         <a href="{{ site.baseurl | append: '2_category.html#' | append: category }}">{{ category }} </a>
       {% endfor %}
     </span>
-    {{ post.content | truncate: 350 }}
   </div>
   {% endfor %}
 </div>
-
-{% include pagination.html %}

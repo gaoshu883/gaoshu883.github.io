@@ -17,29 +17,37 @@
 /*
  * Contents
  *
- * Global resets
+ * Grid layout
  * Sidebar
- * Container
- * Reverse layout
- * Themes
+ * Content
+ *
+ *
+ *
  */
 
 
 /*
- * Global resets
+ * Grid layout
  *
  * Update the foundational and global aspects of the page.
  */
-
-html {
-  font-family: "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+.container {
+  width: 100%;
 }
-@media (min-width: 48em) {
-  html {
-    font-size: 16px;
+@media screen and (min-width: 1080px) {
+  .container {
+    width: 1080px;
+    margin: 0 auto;
   }
 }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.content {
+  padding: 2rem 1rem;
+}
 
 /*
  * Sidebar
@@ -50,43 +58,69 @@ html {
 
 .sidebar {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 0 1rem;
   color: rgba(255,255,255,.5);
   background-color: #202020;
 }
-@media (min-width: 48em) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 18rem;
-    text-align: left;
-  }
-}
+
 
 /* Sidebar links */
 .sidebar a {
   color: #fff;
 }
 
-/* About section */
-.sidebar-about h1 {
+/* Sidebar logo */
+.sidebar-logo {
+  width: 100%;
+}
+@media (min-width: 48em) {
+  .sidebar-logo {
+    width: 15%;
+  }
+}
+
+/* Sidebar head */
+.sidebar-head {
+  width: 100%;
+  text-align: center;
+}
+@media (min-width: 48em) {
+  .sidebar-head {
+    width: 85%;
+    text-align: right;
+  }
+}
+
+.sidebar-title {
   color: #fff;
   margin-top: 0;
   font-family: 'Itim', cursive;
-  font-size: 2.25rem;
-  text-align: center;
+}
+@media screen and (min-width: 48em) {
+  .sidebar-title {
+    font-size: 2.25rem;
+  }
 }
 
-/*Website logo*/
-.sidebar-logo {
-  width: 8rem;
-  margin: 0 auto 1rem;
+.sidebar-lead {
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+/* Website logo */
+.logo-image {
+  width: 6rem;
+}
+@media screen and (max-width: 48em) {
+  .logo-image {
+    width: 5rem;
+    margin: 0 auto;
+  }
 }
 
 /* Sidebar nav */
 .sidebar-nav {
+  width: 100%;
   margin-bottom: 1rem;
   text-align: center;
   font-size: 1.25rem;
@@ -94,178 +128,183 @@ html {
 .sidebar-nav-item {
   line-height: 1.75;
   display: inline-block;
-  padding: 0 0.5rem;
+  background: #484848;
 }
 .sidebar-nav-item a {
   display: block;
+  padding: 0 5vw;
 }
+@media screen and (max-width: 450px) {
+  .sidebar-nav-item a {
+    padding: 0 3vw;
+    font-size: 1rem;
+  }
+}
+
 .sidebar-nav-item a:hover,
-.sidebar-nav-item a:focus {
-  text-decoration: underline;
-}
+.sidebar-nav-item a:focus,
 .sidebar-nav-item.active {
-  font-weight: bold;
   background-color: #268bd2;
-  border-radius: 5px;
-}
-@media (min-width: 48em) {
-  .sidebar-nav-item {
-    display: block;
-  }
-}
-
-/* Sticky sidebar
- *
- * Add the `sidebar-sticky` class to the sidebar's container to affix it the
- * contents to the bottom of the sidebar in tablets and up.
- */
-
-@media (min-width: 48em) {
-  .sidebar-sticky {
-    position: absolute;
-    right:  1rem;
-    left:   1rem;
-  }
+  text-decoration: none;
 }
 
 /* Sidebar copyright */
 .sidebar-copyright {
-  position: relative;
-  top: -1.5rem;
+  width: 100%;
   font-size: 0.75rem;
   text-align: right;
   color: #444343;
-
 }
 
-/* Container
- *
- * Align the contents of the site above the proper threshold with some margin-fu
- * with a 25%-wide `.sidebar`.
- */
-
-.content {
-  padding-top:    4rem;
-  padding-bottom: 4rem;
-}
-
-@media (min-width: 48em) {
-  .content {
-    margin-left: 20rem;
-    margin-right: 2rem;
-  }
-}
-
-@media (min-width: 64em) {
-  .content {
-    margin-left: 22rem;
-    margin-right: 4rem;
-  }
-}
 
 /*
- * Reverse layout
+ * Custom type
  *
- * Flip the orientation of the page by placing the `.sidebar` on the right.
+ * Extend paragraphs with `.lead` for larger introductory text.
  */
 
-@media (min-width: 48em) {
-  .layout-reverse .sidebar {
-    left: auto;
-    right: 0;
-  }
-  .layout-reverse .content {
-    margin-left: 2rem;
-    margin-right: 20rem;
-  }
-}
-
-@media (min-width: 64em) {
-  .layout-reverse .content {
-    margin-left: 4rem;
-    margin-right: 22rem;
-  }
+/*这个属于404页面的引导语*/
+.lead {
+  font-weight: 300;
 }
 
 
 
 /*
- * Themes
+ * Posts and pages
  *
- * As of v1.1, Hyde includes optional themes to color the sidebar and links
- * within blog posts. To use, add the class of your choosing to the `body`.
+ * Each post is wrapped in `.post` and is used on default and post layouts. Each
+ * page is wrapped in `.page` and is only used on the page layout.
  */
 
-/* Base16 (http://chriskempson.github.io/base16/#default) */
-
-/* Red */
-.theme-base-08 .sidebar {
-  background-color: #ac4142;
-}
-.theme-base-08 .content a,
-.theme-base-08 .related-posts li a:hover {
-  color: #ac4142;
+.page,
+.post {
+  margin-bottom: 1.5em;
 }
 
-/* Orange */
-.theme-base-09 .sidebar {
-  background-color: #d28445;
-}
-.theme-base-09 .content a,
-.theme-base-09 .related-posts li a:hover {
-  color: #d28445;
+/* Blog post or page title */
+.page-title,
+.post-title,
+.post-title a {
+  color: #303030;
 }
 
-/* Yellow */
-.theme-base-0a .sidebar {
-  background-color: #f4bf75;
-}
-.theme-base-0a .content a,
-.theme-base-0a .related-posts li a:hover {
-  color: #f4bf75;
+.post-title {
+  font-size: 1.1rem;
+  display: inline-block;
 }
 
-/* Green */
-.theme-base-0b .sidebar {
-  background-color: #90a959;
-}
-.theme-base-0b .content a,
-.theme-base-0b .related-posts li a:hover {
-  color: #90a959;
+.page-title,
+.post-title {
+  margin-top: 0;
 }
 
-/* Cyan */
-.theme-base-0c .sidebar {
-  background-color: #75b5aa;
-}
-.theme-base-0c .content a,
-.theme-base-0c .related-posts li a:hover {
-  color: #75b5aa;
+.page-title {
+  margin-bottom: 2rem;
 }
 
-/* Blue */
-.theme-base-0d .sidebar {
-  background-color: #6a9fb5;
-}
-.theme-base-0d .content a,
-.theme-base-0d .related-posts li a:hover {
-  color: #6a9fb5;
-}
-
-/* Magenta */
-.theme-base-0e .sidebar {
-  background-color: #aa759f;
-}
-.theme-base-0e .content a,
-.theme-base-0e .related-posts li a:hover {
-  color: #aa759f;
+/* Meta data line below post title */
+.post-date {
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  color: #9a9a9a;
 }
 
-/* Brown */
-.theme-base-0f .sidebar {
-  background-color: #8f5536;
+/*Post category on every post page*/
+.post-category {
+  margin: 0 5px;
 }
-.theme-base-0f .content a,
-.theme-base-0f .related-posts li a:hover {
-  color: #8f5536;
+.post-category a {
+  display: inline-block;
+  margin: 0 2px;
+  padding: 0 5px;
+  border: 1px solid #268bd2;
+}
+.post-category a:hover {
+  text-decoration: none;
+  background-color: #268bd2;
+  color: #fff;
+}
+
+/*Meta data about post content*/
+.post-content {
+  margin-top: 30px;
+}
+
+/* Related posts */
+.related {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid #eee;
+}
+.related-posts {
+  padding-left: 0;
+  list-style: none;
+}
+.related-posts h3 {
+  margin-top: 0;
+}
+.related-posts li small {
+  font-size: 75%;
+  color: #999;
+}
+.related-posts li a:hover {
+  color: #268bd2;
+  text-decoration: none;
+}
+.related-posts li a:hover small {
+  color: inherit;
+}
+
+
+/*
+ * Pagination
+ *
+ * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
+ * there are no more previous or next posts to show.
+ */
+
+.pagination {
+  overflow: hidden; /* clearfix */
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Pagination items can be `span`s or `a`s */
+.pagination-item {
+  display: block;
+  padding: 1rem;
+  border: 1px solid #eee;
+}
+.pagination-item:first-child {
+  margin-bottom: -1px;
+}
+
+/* Only provide a hover state for linked pagination items */
+a.pagination-item:hover {
+  background-color: #f5f5f5;
+}
+
+@media (min-width: 30em) {
+  .pagination {
+    margin: 3rem 0;
+  }
+  .pagination-item {
+    float: left;
+    width: 50%;
+  }
+  .pagination-item:first-child {
+    margin-bottom: 0;
+    border-top-left-radius:    4px;
+    border-bottom-left-radius: 4px;
+  }
+  .pagination-item:last-child {
+    margin-left: -1px;
+    border-top-right-radius:    4px;
+    border-bottom-right-radius: 4px;
+  }
 }
