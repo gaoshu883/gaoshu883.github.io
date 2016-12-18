@@ -1,6 +1,6 @@
 # blog-website
 
-本项目是结合GitHub Pages和Jekyll工具搭建的静态博客网站。
+本项目是结合[GitHub Pages](https://pages.github.com/)和[Jekyll](http://jekyllrb.com/docs/home/)工具搭建的静态博客网站。
 
 本站地址：[http://lu3xiang.top/](http://lu3xiang.top/)
 
