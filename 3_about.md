@@ -14,9 +14,12 @@ title: 关于
 
 我还在学习的路上
 
-你可以通过[新浪微博](http://weibo.com/gaoshu883)联系我
+我的[作品集](http://lu3xiang.top/a-portfolio-site/)
+
 
 <br>
+
+
 
 ### 关于本站
 <br>
