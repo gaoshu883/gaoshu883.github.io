@@ -27,11 +27,11 @@ title: 关于
 要特别感谢以下开源项目：
 
 
-* [https://github.com/jmcglone/jmcglone.github.io](https://github.com/jmcglone/jmcglone.github.io)
+* [jmcglone.github.io](https://github.com/jmcglone/jmcglone.github.io)
 
-* [https://github.com/poole/hyde](https://github.com/poole/hyde)
+* [hyde](https://github.com/poole/hyde)
 
-* [https://github.com/nandomoreirame/end2end](https://github.com/nandomoreirame/end2end)
+* [end2end](https://github.com/nandomoreirame/end2end)
 
 
 <br>
