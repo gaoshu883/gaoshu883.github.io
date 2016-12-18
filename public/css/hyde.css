@@ -228,6 +228,9 @@
 }
 
 /*Meta data about post content*/
+.post-header {
+   margin-top: 1rem;
+}
 .post-content {
   margin-top: 30px;
 }
