@@ -2,7 +2,7 @@
 layout: post
 title: "JavaScript之OOP基础概念学习总结二：closure"
 date: 2016-11-21
-category: ['javascript']
+category: ['javascript','OOP','udacity']
 ---
 
 
