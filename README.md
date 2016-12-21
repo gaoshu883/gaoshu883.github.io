@@ -4,7 +4,7 @@
 
 本站地址：[http://lu3xiang.top/](http://lu3xiang.top/)
 
-这篇[文章](http://lu3xiang.top/jekyll/github/2016/11/08/Jekyll%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88.html)是我根据自己的建站经历进行的总结和反思。
+[这里](https://github.com/gaoshu883/gaoshu883.github.io/wiki)是建站的相关知识总结。
 
 参考资料：
 * [搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)
