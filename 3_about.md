@@ -25,7 +25,7 @@ title: 关于
 <br>
 
 
-本站是在研究GitHub Pages时，利用Jekyll工具搭建的。期间，参考了很多博文，感谢知识成果的分享。
+[本站](https://github.com/gaoshu883/gaoshu883.github.io)是在研究GitHub Pages时，利用Jekyll工具搭建的。期间，参考了很多博文，感谢知识成果的分享。
 
 要特别感谢以下开源项目：
 
