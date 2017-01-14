@@ -6,7 +6,19 @@
 
 [这里](https://github.com/gaoshu883/gaoshu883.github.io/wiki)是建站的相关知识总结。
 
-参考资料：
+#### 本地运行
+1. 将本项目下载或克隆到本地硬盘
+
+1. 按照[搭建Jekyll工作环境](https://github.com/gaoshu883/gaoshu883.github.io/wiki/%E4%BD%BF%E7%94%A8Jekyll#%E6%90%AD%E5%BB%BAjekyll%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83)步骤，安装Jekyll和bundler
+
+1. 在项目目录下执行`bundle install`安装项目依赖的gem包
+
+1. 执行`bundle exec jekyll serve`运行Jekyll
+
+1. 浏览博客网站：http://localhost:4000
+
+
+#### 参考资料
 * [搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)
 
 * [Setup Jekyll on Windows and host it on GitHub Pages](https://martinbuberl.com/blog/setup-jekyll-on-windows-and-host-it-on-github-pages/)
