@@ -14,6 +14,8 @@ category: ['jekyll', 'github']
 **网站的组成要素**：客户端、服务器端、网页、传输
 
 **各组成要素职责**：
+
+
 * 客户端：显示网页
 * 服务器端：存储网页
 * 网页：呈现信息
@@ -29,7 +31,9 @@ category: ['jekyll', 'github']
 
 ### 2. 使用GitHub Pages服务
 
-首先在GitHub上创建存放网站全部数据的仓库：
+在GitHub上创建存放网站全部数据的仓库：
+
+
 * 在GitHub上创建一个名为username.github.io的仓库，username是你的GitHub用户名
 * 为便于本地操作，通过git clone，把这个仓库克隆到本地硬盘上
 * 当然，你完全可以在GitHub网页上直接操作
@@ -42,12 +46,16 @@ category: ['jekyll', 'github']
 ### 3. 使用Jekyll
 
 Jekyll是运行在Ruby平台上的程序，所以：
+
+
 * 首先搭建Jekyll工作环境
 * 然后安装Jekyll工具
 * 全部安装成功后，使用Jekyll工具
 
 #### 3.1 搭建Jekyll工作环境
 提前说明：下述步骤基于window10系统
+
+
   1. 安装 Ruby & Ruby Development Kit (下载网址：[http://rubyinstaller.org/downloads/](http://rubyinstaller.org/downloads/) )
   2. 切换到Devkit的安装目录下，然后执行 `ruby dk.rb init`
   3. `ruby dk.rb install`
@@ -67,53 +75,59 @@ Jekyll是运行在Ruby平台上的程序，所以：
 * 到此，环境已经搭建完成
 
 #### 3.2 利用Jekyll建站（快速上手版）
-* 切换至username.github.io目录下
-* `jekyll new .`
-* 打开Gemfile配置文件，添加`gem 'wdm', '>= 0.1.0'`代码（如果电脑系统是windows的话，否则跳过这一步）
-* 在Gemfile中删除`gem "jekyll"`,增加`gem "github-pages"`（使用github pages服务）
-* 执行`bundle install`指令
-* `bundle exec jekyll serve`
-* 浏览博客网站：http://localhost:4000
+1. 切换至username.github.io目录下
+1. `jekyll new .`
+1. 打开Gemfile配置文件，添加`gem 'wdm', '>= 0.1.0'`代码（如果电脑系统是windows的话，否则跳过这一步）
+1. 在Gemfile中删除`gem "jekyll"`,增加`gem "github-pages"`（使用github pages服务）
+1. 执行`bundle install`指令
+1. `bundle exec jekyll serve`
+1. 浏览博客网站：http://localhost:4000
 
 #### 3.3 利用Jekyll建站（基础详解版）
 当`jekyll new .`时，Jekyll网站自动搭建，如下所示：
-```
-.(username.github.io)
-├── _drafts 博文草稿
-|   ├── begin-with-the-crazy-ideas.md
-|   └── on-simplicity-in-technology.md
-├── _includes 网页基本组件
-|   ├── footer.html
-|   └── header.html
-├── _layouts 网页模板
-|   ├── default.html
-|   └── post.html
-├── _posts 博文
-|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
-|   └── 2009-04-26-barcamp-boston-4-roundup.md
-├── _site `Jekyll build`生成的网站，在上传到github上时应忽略
-├── css 网站样式
-|   ├── main.css
-|   └── reset.css
-├── _config.yml 网站配置文件
-├── index.html 网站首页
-├── Gemfile 项目配置文件
-├── README.md 版本项目文档
-└── .gitignore
-```
+
+
+    .(username.github.io)
+    ├── _drafts 博文草稿
+    |   ├── begin-with-the-crazy-ideas.md
+    |   └── on-simplicity-in-technology.md
+    ├── _includes 网页基本组件
+    |   ├── footer.html
+    |   └── header.html
+    ├── _layouts 网页模板
+    |   ├── default.html
+    |   └── post.html
+    ├── _posts 博文
+    |   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+    |   └── 2009-04-26-barcamp-boston-4-roundup.md
+    ├── _site `Jekyll build`生成的网站，在上传到github上时应忽略
+    ├── css 网站样式
+    |   ├── main.css
+    |   └── reset.css
+    ├── _config.yml 网站配置文件
+    ├── index.html 网站首页
+    ├── Gemfile 项目配置文件
+    ├── README.md 版本项目文档
+    └── .gitignore
+
 除此之外 ，可自行按照网站目录树，手动创建所需文件。
 
 **说明**
+
+
 * `jekyll new .`自动创建的文档和上述目录树并不完全一样
 * _config.yml是Jekyll网站的配置文件（内含网站相关信息，例如域名、作者、邮编、分页等等），而Gemfile是项目的配置文件（内含项目开发所需依赖项和下载源等），是利用gem进行包管理时必须的配置文件
 * _layouts、_includes内文档均为html类型，采用Liquid模板语言进行编写
 * 确保username.github.io仓库中的目录结构和配置文件符合[Jekyll官方文档](http://jekyllrb.com/docs/structure/)的定义和要求
 
 当满足：
+
+
 * 网站目录符合文档规范
 * Gemfile配置文件完成
 
 运行Jekyll生成网站：
+
 
 1. `bundle install`
 1. `bundle exec jekyll serve`
