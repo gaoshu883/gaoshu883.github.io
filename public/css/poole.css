@@ -38,7 +38,7 @@ html {
 
 body {
   color: #515151;
-  background-color: #efd;
+  /*background-color: #efd;*/
 }
 
 /* No `:visited` state is required by default (browsers will use `a`) */
@@ -100,7 +100,7 @@ dt {
   font-weight: bold;
 }
 dd {
-  margin-bottom: .5rem;
+  margin: 0 0 0.5rem 1.25rem;
 }
 
 /* Misc */
@@ -206,7 +206,8 @@ blockquote p:last-child {
 img {
   display: block;
   max-width: 100%;
-  border-radius: 5px;
+  border-radius: 20px;
+  border: 5px solid rgba(0,0,0,0.15);
 }
 
 /* Tables */
