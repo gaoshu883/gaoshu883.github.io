@@ -8,11 +8,11 @@ category: ['javascript','OOP','udacity']
 
 最近在探究JavaScript中的scopes概念。经过一番研究，我觉得要从Interpreter的角度，才能更好地理解这个概念。毕竟程序员主要是编写指令，而Interpreter则是把程序员编写的代码一行一行读下去并翻译出来（执行出来），最终结果就会直接反映在Web浏览器的页面上。不过还要注意的是，并不是所有的scopes都必须从Interpreter的角度去理解，lexical scope就要从编写人员的角度去理解，因为它是代码文本层面的scope，是可供程序员进行词法分析与文本理解的scope，不同于Interpreter执行代码时的scope。重点复述：lexical scope先行，是基础scope，程序员最一开始就能确定的scope，目的在于程序设计；程序的执行靠的是Interpreter对程序的解释运行，在运行期间，Interpreter专属的scope建立，也就是Interpreter所属的环境。当程序运行，就相当于进入了JavaScript语言描述的Web世界，在这里，Interpreter是个勤奋的工作者，它处在什么环境中，又要做些什么事情呢？这是接下来我要叙述的故事。
 
-#### 1. Lexical Scope
+### 1. Lexical Scope
 为了更好地讲述这个故事，我需要一段代码，如下图所示，这是一段简化后的代码，假设它是可运行的，因为它只是一个片段。根据lexical scope分析，结果如图中不同颜色区域所示，整段代码就存在着绿红蓝的lexical scope。这是程序员根据语言规则，理解并划分出来的词法作用域。当然，前面我们已经说得很多了，这并不是代码运行时Interpreter所创建出来的作用域。
 ![Lexical Scope](http://i1.piimg.com/582676/f5df857dcf0be119.png)
 
-#### 2. Execution Context
+### 2. Execution Context
 当执行程序，正式进入代码的世界。Interpreter开始工作，环境随之被创建，就是这么得迅速。如下图所示，最左侧的黄色箭头代表Interpreter，右侧是其工作时建立的execution context，也即工作环境。
 ![Execution Context](http://i1.piimg.com/582676/1d71d5914a5d7eb9.png)
 
@@ -23,7 +23,7 @@ Interpreter开始读代码，这就是它的基本工作。**读代码又要做�
 回到原来的问题，于是我们就应该理解到Interpreter所做的工作之一就是存储——记住它需要记住的东西。**那么它需要记住哪些东西呢？**主要就是标识符和数据。
 处于某个工作环境中的Interpreter，首先要做的事情就是看看都有哪些标识符。这非常重要，必须先点名，不然之后的工作不好顺利开展。**如何在当前环境中点名呢？**很简单，其实也很复杂：var变量声明以及函数声明是两大重要线索。
 
-#### 番外：声明提升
+### 番外：声明提升
 这里补充说明一下变量声明提升和函数声明提升的区别：
 
 一段源代码：
@@ -46,7 +46,7 @@ Interpreter开始读代码，这就是它的基本工作。**读代码又要做�
 也就是说，当Interpreter进入某个工作环境后，首先在当前环境中进行identifier scanning，看看有哪些var声明的变量，以及又有哪些函数声明。当它发现了这些信号后，就会把对应的标识符按照声明提升的规定、一定的顺序、以及key-value的数据结构将标识符以及相对应的数据存储在内存中。这个内存其实就是in-memory storage system，存储的内容整体叫做变量对象。Current execution context就是Interpreter当前进行variable lookingup的scope。
 ![in-memory model](http://i1.piimg.com/582676/ea8b433606cc9c54.png)
 
-#### 3. Scope Chain
+### 3. Scope Chain
 程序中关键内容不仅仅是标识符以及其中保存的数据。计算机程序的目的是解决问题，所以关键还得能够操作这些数据才行。操作数据就涉及到运算符、操作符等等，在我们这里并不说明这方面的内容，还是从标识符的角度去说明问题，看看在操作过程中会对标识符进行哪些操作吧。很重要的一点是：**标识符的查询和解析。**
 
 
@@ -54,7 +54,7 @@ Interpreter开始读代码，这就是它的基本工作。**读代码又要做�
 
 因为Interpreter一开始就已经把当前环境中所有的标识符点过名了，同时也都按照key-value结构存贮在内存中。所以，只要按照一定的顺序，找到已经存储过的标识符就可以找到操作时需要的数据了。那么，**按照怎样的顺序去查询标识符呢？**不用担心，JavaScript语言在设计时已经设计好了规范，它提供了作用域链的概念。Interpreter知道当环境创建，不同环境中的in-memory scope确定后，内存中就有一块区域有序存放不同作用域的地址，指向不同的作用域。只要沿着这个区域中的地址线索一步一步向上搜索标识符，总会找到、或者找不到某个标识符。
 
-#### 彩蛋：内存回收
+### 彩蛋：内存回收
 
 >每个函数都有自己的执行环境。当执行流进入一个函数时，函数的环境就会被推入一个环境栈中。而在函数执行之后，栈将其环境弹出，把控制权返回给之前的执行环境。（ECMAScript程序中的执行流正是由这个方便的机制控制着的）。
 
@@ -65,7 +65,7 @@ Interpreter开始读代码，这就是它的基本工作。**读代码又要做�
 >垃圾收集器必须跟踪哪个变量有用，哪个变量没有用，对于不再有用的变量打上标记，以备将来收回其占用的内存。
 
 
-#### 参考资料
+### 参考资料
 
 + 本文图片一、二、五截图自[Object-Oriented JavaScript](https://cn.udacity.com/course/object-oriented-javascript--ud015)视频
 + JavaScript高级程序设计（第3版）第四章

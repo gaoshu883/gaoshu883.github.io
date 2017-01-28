@@ -53,6 +53,6 @@ category: ['javascript','OOP','udacity']
 
 还记得我们正式探讨原型链前，说的那个有关代码复用的问题吗？是的，你必须时刻记得代码复用这个十分重要的编程目的。这门编程语言中有原型链的概念，就是为了让我们能够进行代码复用（共享），同时节省内存。（因为有了原型链，我们就不用再编写已经存在的属性和方法——避免重复的代码编写工作）
 
-#### 参考资料
+### 参考资料
 
 所有图片截取自[Object-Oriented JavaScript](https://cn.udacity.com/course/object-oriented-javascript--ud015)相关视频

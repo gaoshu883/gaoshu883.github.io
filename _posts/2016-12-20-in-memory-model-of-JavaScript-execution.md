@@ -48,7 +48,7 @@ category: ['javascript']
 
 ![全局环境中的变量对象](http://i1.piimg.com/582676/aa05380c9838bc35.png)
 
-### 3. keep track of values
+#### 3. keep track of values
 
 说明：
 
@@ -60,7 +60,7 @@ category: ['javascript']
 
 ![Keep Track of Values](http://i1.piimg.com/582676/89bfbfbecd2565e4.png)
 
-### 4. 调用createFunction函数
+#### 4. 调用createFunction函数
 
 说明：
 
@@ -71,7 +71,7 @@ category: ['javascript']
 
 ![调用createFunction函数](http://i1.piimg.com/582676/290fa25034b1d703.png)
 
-### 5. 调用result[0]函数
+#### 5. 调用result[0]函数
 
 说明：
 
