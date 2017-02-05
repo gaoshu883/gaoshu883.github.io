@@ -28,7 +28,7 @@
     overflow:auto;
     overflow-x:hidden;!important;
     width:200px;
-    min-height:108px;
+    /*min-height:108px;*/
     max-height:460px;
     position: fixed;
     right: 8px;
