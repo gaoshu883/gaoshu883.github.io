@@ -34,19 +34,21 @@
 .container {
   width: 100%;
 }
-@media screen and (min-width: 850px) {
+/*@media screen and (min-width: 850px) {
   .container {
     width: 850px;
     margin: 0 auto;
   }
-}
+}*/
 .row {
   display: flex;
   flex-wrap: wrap;
 }
 
 .content {
-  padding: 2rem 1rem;
+  /*padding: 2rem 1rem;*/
+  max-width: 850px;
+  margin: 2rem auto;
 }
 
 /*
@@ -58,46 +60,46 @@
 
 .sidebar {
   text-align: center;
-  padding: 0 1rem;
-  color: rgba(255,255,255,.5);
-  background-color: #202020;
+  padding: 3rem 0 1rem;
+  color: rgba(255,255,255,.75);
+  background: linear-gradient(to bottom, #268bd2 18%, rgba(38, 139, 210, 0.67));
 }
-@media (min-width: 850px) {
+/*@media (min-width: 850px) {
   .sidebar {
     border-radius: 0 0 10px 10px;
   }
 }
-
+*/
 
 /* Sidebar links */
 .sidebar a {
-  color: #fff;
+  color: #333;
 }
 
 /* Sidebar logo */
 .sidebar-logo {
   width: 100%;
 }
-@media (min-width: 48em) {
+/*@media (min-width: 48em) {
   .sidebar-logo {
     width: 15%;
   }
-}
+}*/
 
 /* Sidebar head */
 .sidebar-head {
   width: 100%;
   text-align: center;
 }
-@media (min-width: 48em) {
+/*@media (min-width: 48em) {
   .sidebar-head {
     width: 85%;
     text-align: right;
   }
-}
+}*/
 
 .sidebar-title {
-  color: #fff;
+  color: #333;
   margin-top: 0;
   font-family: 'Itim', cursive;
 }
@@ -116,13 +118,9 @@
 /* Website logo */
 .logo-image {
   width: 6rem;
+  margin: 0 auto;
   border: none;
-}
-@media screen and (max-width: 48em) {
-  .logo-image {
-    width: 5rem;
-    margin: 0 auto;
-  }
+  box-shadow: none;
 }
 
 /* Sidebar nav */
@@ -132,15 +130,15 @@
   text-align: center;
   font-size: 1.25rem;
 }
-@media screen and (max-width: 48em) {
+/*@media screen and (max-width: 48em) {
   .sidebar-nav {
     margin-top: 0;
   }
-}
+}*/
 .sidebar-nav-item {
   line-height: 1.75;
   display: inline-block;
-  background: #484848;
+/*  background: #484848;*/
 }
 .sidebar-nav-item a {
   display: block;
@@ -161,8 +159,8 @@
   text-decoration: none;
 }
 
-/* Sidebar copyright */
-.sidebar-copyright {
+/* Footer copyright */
+.footer__copyright {
   width: 100%;
   font-size: 0.75rem;
   text-align: right;
@@ -178,7 +176,7 @@
 
 .page,
 .post {
-  margin-bottom: 1.5em;
+  margin: 1.5em 0;
 }
 
 /* Blog post or page title */
@@ -204,16 +202,11 @@
 
 /* Meta data line below post title */
 .post-date {
-  margin-top: -.5rem;
-  margin-bottom: 1rem;
-  padding-left: 1rem;
+  margin: 0.5rem 0;
   color: #9a9a9a;
 }
 
 /*Post category on every post page*/
-.post-category {
-  margin: 0 5px;
-}
 .post-category a {
   display: inline-block;
   margin: 0 2px;
@@ -228,7 +221,9 @@
 
 /*Meta data about post content*/
 .post-header {
-   margin-top: 1rem;
+   margin: 1rem 0;
+   padding: 1rem 0;
+   border-bottom: 5px solid #268bd2;
 }
 .post-content {
   margin-top: 30px;
@@ -259,12 +254,12 @@
   color: inherit;
 }
 
-/*404页面*/
+/* 404页面 */
 .lead {
   font-weight: 300;
 }
 
-/*分类页面*/
+/* 分类页面 */
 .arc-list {
   list-style: none;
 }

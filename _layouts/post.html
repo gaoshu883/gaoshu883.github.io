@@ -1,16 +1,16 @@
 ---
-layout: default
+layout: post-template
 ---
 
 <div class="post" id="post">
   <div class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    <span class="post-date">{{ page.date | date_to_string }}</span>
-    <span class="post-category">
+    <div class="post-date">日期：{{ page.date | date_to_string }}</div>
+    <div class="post-category">标签：
       {% for category in page.categories %}
         <a href="{{ site.baseurl | append: '2_category.html#' | append: category }}">{{ category }} </a>
       {% endfor %}
-    </span>
+    </div>
   </div>
   <div class="post-content" id="post-content">
     {{ content }}
@@ -23,7 +23,7 @@ layout: default
     {% for post in site.related_posts limit:3 %}
       <li>
         <h3>
-          <a href="{{ post.url | append: '#post' }}">
+          <a href="{{ post.url }}">
             {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
           </a>

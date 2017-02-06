@@ -49,10 +49,6 @@ a {
 a strong {
   color: inherit;
 }
-/* `:focus` is linked to `:hover` for basic accessibility */
-a:hover {
-  text-decoration: underline;
-}
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -208,6 +204,7 @@ img {
   max-width: 100%;
   border-radius: 20px;
   border: 5px solid rgba(0,0,0,0.15);
+  box-shadow: 5px 5px 5px #777;
 }
 
 /* Tables */
