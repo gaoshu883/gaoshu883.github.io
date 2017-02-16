@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+{% include homeHead.html %}
+
+<body>
+  <div class="container">
+    <div class="content row">
+      {{ content }}
+    </div>
+  </div>
+  {% include pageScript.html %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('html').css('height',window.innerHeight + 'px');
+    });
+  </script>
+</body>
+
+</html>

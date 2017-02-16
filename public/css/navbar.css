@@ -27,6 +27,11 @@
 .nav__list {
   text-align: right;
 }
+@media screen and (max-width: 550px) {
+  .nav__list {
+    text-align: center;
+  }
+}
 
 .nav__item {
   display: inline-block;
@@ -40,6 +45,11 @@
   color: #fff;
   background: #268bd2;
   line-height: 60px; /*行内元素的line-height作用强大*/
+}
+@media screen and (max-width: 550px) {
+  .nav__item a {
+  width: 20vw;
+  }
 }
 
 .nav__item a:hover {

@@ -46,8 +46,13 @@
 }
 
 .content {
-  /*padding: 2rem 1rem;*/
   max-width: 850px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  border: 1px dashed #268bd2;
+}
+
+.home-content {
   margin: 2rem auto;
 }
 
@@ -60,16 +65,15 @@
 
 .sidebar {
   text-align: center;
-  padding: 3rem 0 1rem;
+  padding: 25vh 0 1rem;
   color: rgba(255,255,255,.75);
-  background: linear-gradient(to bottom, #268bd2 18%, rgba(38, 139, 210, 0.67));
+  background: linear-gradient(to right, #268, #268bd2);
 }
-/*@media (min-width: 850px) {
+@media screen and (orientation : landscape) {
   .sidebar {
-    border-radius: 0 0 10px 10px;
+    padding: 2rem 0;
   }
 }
-*/
 
 /* Sidebar links */
 .sidebar a {
@@ -117,12 +121,16 @@
 
 /* Website logo */
 .logo-image {
-  width: 6rem;
+  width: 8rem;
   margin: 0 auto;
   border: none;
   box-shadow: none;
 }
-
+@media screen and (max-width: 450px) {
+  .log-image {
+    width: 6rem;
+  }
+}
 /* Sidebar nav */
 .sidebar-nav {
   width: 100%;
@@ -136,14 +144,17 @@
   }
 }*/
 .sidebar-nav-item {
-  line-height: 1.75;
   display: inline-block;
-/*  background: #484848;*/
 }
+
 .sidebar-nav-item a {
   display: block;
-  padding: 0 3.5vw;
+  padding: 0.25rem 3.5vw;
+  border-radius: 1.5rem;
+  box-shadow: 2px 6px 2px #02293c;
+  background: #069;
   font-size: 1.15rem;
+  color: #fff;
 }
 @media screen and (max-width: 450px) {
   .sidebar-nav-item a {
@@ -153,10 +164,11 @@
 }
 
 .sidebar-nav-item a:hover,
-.sidebar-nav-item a:focus,
-.sidebar-nav-item.active {
-  background-color: #268bd2;
+.sidebar-nav-item a:focus {
+  /*background-color: #268bd2;*/
+  box-shadow: none;
   text-decoration: none;
+  transform: translateY(6px);
 }
 
 /* Footer copyright */
@@ -174,9 +186,9 @@
  * page is wrapped in `.page` and is only used on the page layout.
  */
 
-.page,
-.post {
-  margin: 1.5em 0;
+.post,
+.page {
+  margin: 1em 0;
 }
 
 /* Blog post or page title */
