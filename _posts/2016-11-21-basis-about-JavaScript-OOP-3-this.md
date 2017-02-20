@@ -5,7 +5,7 @@ date: 2016-11-21
 category: ['javascript','OOP','udacity']
 ---
 
-**更新于：2017年2月15日**
+**更新于：2017年2月20日**
 
 ### 0. 序言
 
@@ -115,9 +115,9 @@ function中的参数this指向何值？需明确：只有当函数被调用，JS
 
 采用内存模型分析方法，关于此方法的介绍，可参考[JavaScript代码执行的in-memory-model]()这篇文章。
 
-![o.m方法作为setTimeout函数的回调函数](http://i1.piimg.com/582676/6a8bf7d32f41a62b.png)
+![o.m方法作为setTimeout函数的回调函数](http://p1.bqimg.com/582676/05363394cba75448.png)
 
-上图中，红色标记处是关键所在。很明显，当o.m作为参数传递到setTimeout函数中，o.m指向的函数体( f )和o对象之间的指向被重写，它们之间已经没有任何关系，o.m函数体是作为function而调用，函数体的调用环境对象（即this指代）为全局环境对象global(window)。
+如上图所示，cb是作为函数而调用，则其this参数、即该函数的调用环境对象为全局对象。虽然cb的函数体就是o.m的函数体，但两者的this参数值没有任何关系，this值并不是从函数体中得来，而是由函数的调用环境对象确定。
 
 类似setImeout函数中传入函数参数存在的问题其实很常见，通过下述方法可以回调函数的this值不被重写：
 
