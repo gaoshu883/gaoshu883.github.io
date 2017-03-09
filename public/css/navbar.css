@@ -12,6 +12,7 @@
   will-change: transform;
   transform: translateX(0);
   transition: transform .5s ease;
+  z-index: 999;
 }
 
 .nav--off {
