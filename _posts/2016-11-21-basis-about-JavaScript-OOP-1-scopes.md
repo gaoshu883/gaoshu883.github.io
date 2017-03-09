@@ -28,12 +28,14 @@ Interpreter开始读代码，这就是它的基本工作。**读代码又要做�
 
 一段源代码：
 
+<pre class="brush: js">
     alert(sum);
     function sum(num1,num2) {
         return num1 + num2;
     }
     alert(a);
     var a = 10;
+</pre>
 
 声明提升后（Interpreter读完这段代码首先存储的数据）：
 

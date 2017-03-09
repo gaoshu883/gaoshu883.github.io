@@ -189,6 +189,7 @@
 .post,
 .page {
   margin: 1em 0;
+  width: 100%;
 }
 
 /* Blog post or page title */
@@ -239,6 +240,7 @@
 }
 .post-content {
   margin-top: 30px;
+  width: 100%;
 }
 
 /* Related posts */

@@ -34,19 +34,20 @@ this：在函数调用时，指代当前函数的调用环境对象。
 
 举个例子说明嵌套函数中的this绑定值的问题：
 
-    var o = {                              // 一个对象 o
-        m: function() {                    // 对象 o 的 m 方法
-            var self = this;               // o.m() 调用时, this 指代 o, 变量 self 指向 o
-            console.log(this === o);       // "true"
-            f();
-            function f() {                 // 方法中 m 的嵌套函数 f
-                console.log(this === o);   // "false": f() 作为 function 被调用，this 指代 global 或 undefine
-                console.log(self === o);   // "true": self 是变量，缓存的是外层函数的 this 值
-            }
+<pre class="brush: js">
+var o = {                              // 一个对象 o
+    m: function() {                    // 对象 o 的 m 方法
+        var self = this;               // o.m() 调用时, this 指代 o, 变量 self 指向 o
+        console.log(this === o);       // "true"
+        f();
+        function f() {                 // 方法中 m 的嵌套函数 f
+            console.log(this === o);   // "false": f() 作为 function 被调用，this 指代 global 或 undefine
+            console.log(self === o);   // "true": self 是变量，缓存的是外层函数的 this 值
         }
-    };
-    o.m();                                 // 调用 o.m 方法
-
+    }
+};
+o.m();                                 // 调用 o.m 方法
+</pre>
 
 ### 2. this绑定值的几种情况
 
@@ -99,6 +100,7 @@ function中的参数this指向何值？需明确：只有当函数被调用，JS
 
 假设setTimeout这个函数的源代码别定义在timers.js文件中，它的内部代码如下所示：
 
+<pre class="brush: js">
     var setTimeout = function(cb, ms) {
         waitSomehow(ms);
         cb(?);
@@ -110,6 +112,9 @@ function中的参数this指向何值？需明确：只有当函数被调用，JS
                             //        "false": 说明 o.m 方法中的 this 不再指代对象 o
                             //        "false"
                             //        "false"
+</pre>
+
+
 
 分析：
 
@@ -121,12 +126,14 @@ function中的参数this指向何值？需明确：只有当函数被调用，JS
 
 类似setImeout函数中传入函数参数存在的问题其实很常见，通过下述方法可以回调函数的this值不被重写：
 
+<pre class="brush: js">
     setTimeout(function() {
         o.m();
     }, 1000);          // 执行结果为：
                        //       "true" : 说明 o.m 调用时，this 指向对象 o
                        //       "false"
                        //       "true"
+</pre>
 
 分析：
 

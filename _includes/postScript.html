@@ -2,6 +2,8 @@
 <script type="text/javascript" src="{{ site.baseurl }}public/js/blog-content-generator.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}public/js/jquery.nicescroll.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}public/js/navbar.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}public/js/shCore.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}public/js/shBrushJScript.js"></script>
 <script type="text/javascript">
   // $("html").niceScroll({
   //   cursorcolor: "#515151",
@@ -15,6 +17,9 @@
       $("#sideBarContents").niceScroll({
         cursorcolor: "#ccc"
       });
+
+      // 装饰code
+      SyntaxHighlighter.all();
   });
 </script>
 

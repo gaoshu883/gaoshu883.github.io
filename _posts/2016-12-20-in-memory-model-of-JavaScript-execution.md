@@ -13,7 +13,7 @@ category: ['javascript']
 
 ### 代码片段
 
-
+<pre class="brush: js">
     function createFunction() {
         var result = new Array();
 
@@ -27,6 +27,7 @@ category: ['javascript']
 
     var result = createFunction();
     var foo = result[0]();
+</pre>
 
 ### 绘制步骤
 
