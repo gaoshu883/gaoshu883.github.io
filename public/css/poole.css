@@ -13,6 +13,11 @@
  * https://github.com/poole/poole.
  */
 
+/*local Google font*/
+@font-face {
+  font-family: 'Itim';
+  src: url(../font/Itim-Regular.ttf);
+}
 
 /*
  * Body resets
@@ -218,6 +223,11 @@ img {
   border-radius: 20px;
   border: 5px solid rgba(0,0,0,0.15);
   box-shadow: 5px 5px 5px #777;
+}
+@media screen and (max-width: 450px) {
+  img {
+    box-shadow: none;
+  }
 }
 
 /* Tables */
