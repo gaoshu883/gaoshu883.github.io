@@ -1,6 +1,9 @@
 # Setup
 title:            Lu3Xiang
-email:            gaoshu883@163.com
+
+author:
+  name:           Xiaolu Wang
+  email:            gaoshu883@163.com
 tagline:          'Personal Blog'
 description:      '分享前端学习心得、体悟、感想、总结，生活随笔。作者 <a href="http://weibo.com/gaoshu883" target="_blank">@三水声香</a>'
 url:              http://lu3xiang.top
