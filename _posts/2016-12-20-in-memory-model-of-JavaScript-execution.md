@@ -2,7 +2,7 @@
 layout: post
 title: "JavaScript代码执行的in-memory-model"
 date: 2016-12-20
-category: ['javascript']
+category: ["javascript"]
 ---
 
 如果我们能够知道JavaScript代码是如何执行的，那么就很容易理解代码，也就能够编写出更易被人理解、质量更高的代码。

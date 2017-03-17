@@ -2,7 +2,7 @@
 layout: post
 title: "什么是API？"
 date: 2016-11-13
-category: ['随笔']
+category: ["随笔"]
 ---
 
 #### 打个比方

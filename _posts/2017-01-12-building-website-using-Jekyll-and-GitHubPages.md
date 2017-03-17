@@ -2,7 +2,10 @@
 layout: post
 title: "利用Jekyll和GitHub Pages搭建静态博客网站"
 date: 2017-01-12
-category: ['jekyll', 'github']
+category: ["jekyll", "github"]
+related: [
+    "Jekyll到底是什么？"
+]
 ---
 
 网站刚建成那会儿，写过一篇建站后感 *[Jekyll到底是什么？](https://lu3xiang.top/jekyll/github/2016/11/08/Jekyll到底是什么？.html)*，文章部分涉及如何利用Jekyll搭建个人博客，但主要还是抒发建站感想的。而现在这篇文章，则是完全围绕如何建站，希望按照这篇文章能够原样创建一个博客网站。

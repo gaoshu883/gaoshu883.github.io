@@ -2,7 +2,11 @@
 layout: post
 title: "搭建Ajax本地开发环境"
 date: 2017-02-05
-category: ['web前端开发技能']
+category: ["web前端开发技能"]
+related: [
+    "搭建本地Web开发环境",
+    "利用Ngrok实现本地开发外网调试"
+]
 ---
 
 Ajax技术的目的在于实现异步请求，在不刷新整个页面的前提下，异步获取数据。

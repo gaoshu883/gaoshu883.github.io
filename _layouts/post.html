@@ -18,17 +18,21 @@ layout: post-template
 </div>
 
 <div class="related">
-  <h2>更多</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
+  {% if content and page.related %}
+    <h2>相关文章</h2>
+    <ul class="related-posts">
+      {% for post in site.posts %}
+        {% if page.related contains post.title %}
+          <li>
+            <h3>
+              <a href="{{ post.url }}">
+                {{ post.title }}
+                <small>{{ post.date | date_to_string }}</small>
+              </a>
+            </h3>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
 </div>

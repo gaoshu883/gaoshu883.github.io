@@ -2,7 +2,11 @@
 layout: post
 title: "利用Ngrok实现本地开发外网调试"
 date: 2017-02-05
-category: ['web前端开发技能']
+category: ["web前端开发技能"]
+related: [
+    "搭建本地Web开发环境",
+    "搭建Ajax本地开发环境"
+]
 ---
 
 ### 1. 背景

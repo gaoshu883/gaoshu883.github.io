@@ -2,7 +2,12 @@
 layout: post
 title: "JavaScript之OOP基础概念学习总结三：this"
 date: 2016-11-21
-category: ['javascript','OOP','udacity']
+category: ["javascript","OOP","udacity"]
+related: [
+    "JavaScript之OOP基础概念学习总结一：scopes",
+    "JavaScript之OOP基础概念学习总结二：closure",
+    "JavaScript之OOP基础概念学习总结四：prototype delegation"
+]
 ---
 
 **更新于：2017年2月20日**

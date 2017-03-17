@@ -2,7 +2,7 @@
 layout: post
 title: "Web世界的上帝创物记"
 date: 2016-11-21
-category: ['javascript']
+category: ["javascript"]
 ---
 
 上帝创造了一切，这就是JavaScript故事的核心。曾经听过一句话，JavaScript这门语言的设计出发点，是基于人类世界进行的语言设计，也就是说，这门语言是面向对象的。面向对象，基于对象，就像人类世界，所有的活动也是基于对象的。面向对象，其实也就是把Web世界类比为人类世界，JavaScript这门编程语言，也就类比于人类世界的语言。我们只能用语言来描述这个世界发生的一切，Web世界也是这样。

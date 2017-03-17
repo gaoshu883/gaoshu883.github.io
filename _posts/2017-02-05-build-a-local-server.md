@@ -2,7 +2,11 @@
 layout: post
 title: "搭建本地Web开发环境"
 date: 2017-02-05
-category: ['web前端开发技能']
+category: ["web前端开发技能"]
+related: [
+    "搭建Ajax本地开发环境",
+    "利用Ngrok实现本地开发外网调试"
+]
 ---
 
 Web前端开发、测试通常需用到本地服务器，对本地服务器的需求基本上分为两种：HTTP静态服务器和Web+数据库服务器。
