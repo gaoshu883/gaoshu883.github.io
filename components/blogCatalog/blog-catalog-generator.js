@@ -168,11 +168,5 @@ var BlogDirectory = {
 
     document.body.appendChild(divSideBar);
   }
-
 };
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   /*页面DOM加载完成之后生成博客目录*/
-//   BlogDirectory.createBlogDirectory("post-content", "h3", "h4", 20);
-
-// }, false);
