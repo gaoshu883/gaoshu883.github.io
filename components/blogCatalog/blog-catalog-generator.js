@@ -88,36 +88,43 @@ var BlogDirectory = {
     return output;
   },
 
-  /*
-  创建博客目录，
-  id表示包含博文正文的 div 容器的 id，
-  mt 和 st 分别表示主标题和次级标题的标签名称（如 H2、H3，大写或小写都可以！），
-  interval 表示移动的速度
-  */
-  createBlogDirectory: function(id, mt, st, interval) {
+  /**
+   * 创建博客目录，
+   * 传入对象字面量
+   * {string}id - 表示包含博文正文的 div 容器的 id
+   * {string}mt, {string}t - 分别表示主标题和次级标题的标签名称（如 H2、H3，大写或小写都可以！），
+   * {number}interval - 表示移动的速度
+   * {boolean}insertPost - 是否将博客目录插入博客正文最前面，默认为false
+   **/
+  createBlogDirectory: function(options) {
+    var id = options.id,
+        mt = options.mt,
+        st = options.st,
+        interval = options.interval,
+        insertPost = options.insertPost || false;
     //获取博文正文div容器
     var elem = document.getElementById(id);
     if (!elem) return false;
     //获取div中所有元素结点
     var nodes = elem.getElementsByTagName("*");
     //创建博客目录的div容器
-    var divSideBar = document.createElement('DIV');
-    divSideBar.className = 'sideBar';
-    divSideBar.setAttribute('id', 'sideBar');
-    var divSideBarTab = document.createElement('DIV');
-    divSideBarTab.setAttribute('id', 'sideBarTab');
-    divSideBar.appendChild(divSideBarTab);
+    var divBlogCatalog = document.createElement('DIV');
+    divBlogCatalog.className = 'blog-catalog';
+    divBlogCatalog.setAttribute('id', 'blogCatalog');
+    var divBlogCatalogTab = document.createElement('DIV');
+    divBlogCatalogTab.setAttribute('id', 'blogCatalogTab');
+    divBlogCatalog.appendChild(divBlogCatalogTab);
     var h3 = document.createElement('H3');
-    divSideBarTab.appendChild(h3);
+    divBlogCatalogTab.appendChild(h3);
     var txt = document.createTextNode('目录');
     h3.appendChild(txt);
-    var divSideBarContents = document.createElement('DIV');
-    // divSideBarContents.style.display = 'none';
-    divSideBarContents.setAttribute('id', 'sideBarContents');
-    divSideBar.appendChild(divSideBarContents);
+    var divBlogCatalogContents = document.createElement('DIV');
+    // divBlogCatalogContents.style.display = 'none';
+    divBlogCatalogContents.setAttribute('id', 'blogCatalogContents');
+    divBlogCatalog.appendChild(divBlogCatalogContents);
     //创建自定义列表
     var dlist = document.createElement("dl");
-    divSideBarContents.appendChild(dlist);
+    divBlogCatalogContents.appendChild(dlist);
     var num = 0; //统计找到的mt和st
     mt = mt.toUpperCase(); //转化成大写
     st = st.toUpperCase(); //转化成大写
@@ -157,16 +164,13 @@ var BlogDirectory = {
     }
 
     if (num === 0) return false;
-    // /*鼠标进入时的事件处理*/
-    // divSideBarTab.onmouseenter = function() {
-    //   divSideBarContents.style.display = 'block';
-    // };
-    // /*鼠标离开时的事件处理*/
-    // divSideBar.onmouseleave = function() {
-    //   divSideBarContents.style.display = 'none';
-    // };
 
-    document.body.appendChild(divSideBar);
+    // 根据不同的请求，将博客目录插入到博客正文最前面或文档最后面
+    if (insertPost) {
+      elem.insertBefore(divBlogCatalog, elem.firstChild);
+    } else {
+      document.body.appendChild(divBlogCatalog);
+    }
   }
 };
 

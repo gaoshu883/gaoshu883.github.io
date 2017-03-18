@@ -3,53 +3,74 @@
  日期：2014-5-11
  来源：http://www.cnblogs.com/xdp-gacl/p/3718879.html
 */
-#sideBar{
-    font-size:12px;
-    font-family:Arial, Helvetica, sans-serif;
-    text-align:left;
-    position:fixed;
-    top:68px;
-    right:10px;
+
+#blogCatalog {
+    margin: 2rem 0;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
     width: auto;
     height: auto;
 }
-@media screen and (max-width: 1280px) {
-    #sideBar {
-        display: none;
+
+@media screen and (min-width: 1280px) {
+    #blogCatalog {
+        position: fixed;
+        top: 68px;
+        right: 10px;
+        margin: 0;
     }
 }
 
-#sideBarTab{
-    border-right: 5px solid #ff7f27;
-    padding-right: 0.5rem;
+#blogCatalogTab {
+    border-left: 5px solid #ff7f27;
+    padding-left: 0.5rem;
 }
 
-#sideBarContents{
-    overflow:auto;
-    overflow-x:hidden;!important;
-    width:200px;
-    /*min-height:108px;*/
-    max-height:460px;
-    position: fixed;
-    right: 8px;
-    background:#ffffff;
-    border-left: 5px solid #268bd2;
-    padding-right: 0.5rem;
-}
-#sideBarContents dl{
-    margin:0;
-    padding:0;
+@media screen and (min-width: 1280px) {
+    #blogCatalogTab {
+        border-right: 5px solid #ff7f27;
+        border-left: none;
+        padding-right: 0.5rem;
+        padding-left: 0;
+    }
 }
 
-#sideBarContents dt{
-    margin-top:5px;
-    margin-left:5px;
+#blogCatalogContents {
+    padding: 0.5rem;
+    background: #d1edff;
 }
 
-#sideBarContents dd, dt {
+@media screen and (min-width: 1280px) {
+    #blogCatalogContents {
+        position: fixed;
+        right: 8px;
+        padding: 0 0.5rem 0 0;
+        border-left: 5px solid #268bd2;
+        width: 200px;
+        max-height: 460px;
+        overflow: auto;
+        overflow-x: hidden !important;
+        background: #fff;
+    }
+}
+
+#blogCatalogContents dl {
+    margin: 0;
+    padding: 0;
+}
+
+#blogCatalogContents dt {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#blogCatalogContents dd,
+dt {
     cursor: pointer;
 }
 
-#sideBarContents dd:hover, dt:hover {
-    color:#A7995A;
+#blogCatalogContents dd:hover,
+dt:hover {
+    color: #A7995A;
 }
