@@ -23,7 +23,7 @@ Web开发需要联网试验和调试，通常做法是把网站上传至Web服�
 
 [代理官网](https://www.ngrok.cc/)下载Sunny-Ngrok程序，解压。注册并登陆[隧道管理平台](http://www.ngrok.cc/login)，在`隧道管理>开通隧道>购买免费隧道>`选项卡下填写以下内容：（确定添加后即可使用）
 
-![ngrok国内代理隧道管理平台](http://i1.piimg.com/582676/865e6efc25739a34.png)
+![ngrok国内代理隧道管理平台](/images/2017-02/ngrok.png)
 
 **注意：**http验证用户和验证明码不要填，不然你就只能输入用户名和密码后才能访问网站，也就无法利用如pageSpeed Insight工具对网站进行测速。
 

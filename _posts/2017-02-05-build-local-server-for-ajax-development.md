@@ -25,19 +25,19 @@ phpStudy，该程序集成Apache（web server程序）+PHP（开发语言）+MyS
 
 phpStudy操作界面如下图所示：
 
-![phpStudy操作界面](http://i1.piimg.com/582676/217d5e5831a3ad34.png)
+![phpStudy操作界面](/images/2017-02/phpStudy1.png)
 
 再来看一下phpStudy的目录：
 
-![phpStudy安装目录](http://i1.piimg.com/582676/8acc8486dd93a128.png)
+![phpStudy安装目录](/images/2017-02/phpStudy2.png)
 
 在WWW目录下创建名为ajaxdemo的Web站点：
 
-![WWW目录下的ajaxdemo站点](http://i1.piimg.com/582676/d7cf9cea5223ecf8.png)
+![WWW目录下的ajaxdemo站点](/images/2017-02/ajaxdemo.png)
 
 在浏览器地址栏输入http://localhost/ajaxdemo/，打开ajaxdemo站点。
 
-![ajaxdemo站点文档](http://p1.bpimg.com/582676/8e45bb5b4bff4624.png)
+![ajaxdemo站点文档](/images/2017-02/ajaxdemo2.png)
 
 附注：站点文档来源：[慕课网-Ajax全接触](http://www.imooc.com/learn/250)
 

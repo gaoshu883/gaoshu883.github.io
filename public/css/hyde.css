@@ -230,6 +230,7 @@
 
 /* Related posts */
 .related {
+  width: 100%;
   padding-top: 2rem;
   padding-bottom: 2rem;
   border-top: 1px solid #eee;
@@ -261,4 +262,8 @@
 /* 分类页面 */
 .arc-list {
   list-style: none;
+}
+
+.discussion {
+  width: 100%;
 }

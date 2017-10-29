@@ -24,7 +24,7 @@ related: [
 
 为了实现代码复用，我们主要讨论两种策略，如下图所示：一种是直接复制需要的代码，另一种则是原型委托（我不复制，但是我和你建立联系，从而interpreter能够去你——原型对象那里继续查找）。
 
-![代码复用的策略](http://i1.piimg.com/582676/a70c86b132e035bd.png)
+![代码复用的策略](/images/2016-11-21-prototype/1.png)
 
 第一种方式：直接复制对象，并不能随时保证同步，因为复制操作是一次性的。就像git版本控制一样，你本地更新后，远端并没有更新；远端更新后，本地并没有更新，需要手动git push 或者git pull。但是第二种方式就不一样了，因为不是复制，只是建立连接，所以对象更新后，就能直接通过连接反映过来。
 
@@ -34,13 +34,13 @@ related: [
 
 上面提到的第二种方式，最关键的点在于原型链。我们并不直接完全复制某对象，还是把某对象当做原型，通过委托机制（告诉某对象，我想把你做当我的原型，希望能够访问你的数据，使用你的方法），实现某对象上的属性查找。所有的对象都有一个原型链的终点，那就是Object.prototype原型对象。这里存储的属性是所有对象共有的。不管是哪条原型链上的对象，它们的属性lookup都能到达Object.prototype对象（如果属性存储在这个对象中时，比如toString方法）。
 
-![Object.prototype](http://i1.piimg.com/582676/c2be6cb4b29efd39.png)
+![Object.prototype](/images/2016-11-21-prototype/2.png)
 
 ### Object.prototype.constructor
 
 上面我们提到了原型链的终点对象，提到这个对象中存在着一些实例对象的共享属性，现在我们就要说说其中一个属性`.constructor`。
 
-![Object.prototype.constructor](http://i1.piimg.com/582676/b9f78a26208c573c.png)
+![Object.prototype.constructor](/images/2016-11-21-prototype/3.png)
 
 >Like all properties, .constructor actually points to a different object that's stored elsewhere.
 
@@ -52,7 +52,7 @@ related: [
 
 如果你在创建对象的时候没有什么特别指示或者处理的话，对象的直接原型对象也即原型链的终点对象是Object.prototype对象。但是如果你做了一些特殊的指示或者要求，情况就大不相同了。这个时候，你可能需要委托其他的原型对象，比如Array.prototype对象。Array.prototype对象中存储着一些Object.prototype对象没有的属性和方法，但是也存储着和Object.prototype对象中一样的属性和方法，比如constructor属性。此外，还要注意的是，Object.prototype对象始终都是原型链的终点对象，也就是说，Array.prototype也会委托于Object.prototype。这条原型链相较于之前讨论的那条，就多了一个Array.prototype原型链节了，如下图所示：
 
-![Array.prototype](http://i1.piimg.com/582676/d79b7d5f2604031b.png)
+![Array.prototype](/images/2016-11-21-prototype/4.png)
 
 ### 总结
 

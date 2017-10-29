@@ -46,11 +46,11 @@ related: [
 
 #### 1. global环境
 
-![global环境](http://i1.piimg.com/582676/a43312773918bbd8.png)
+![global环境](/images/2016-12-20-in-memory/1.png)
 
 #### 2. 全局环境中的变量对象
 
-![全局环境中的变量对象](http://i1.piimg.com/582676/aa05380c9838bc35.png)
+![全局环境中的变量对象](/images/2016-12-20-in-memory/2.png)
 
 #### 3. keep track of values
 
@@ -62,7 +62,7 @@ related: [
 + 作用域链是数组，其中包含的是各个作用域中的变量对象
 + 只当调用函数时，才会创建函数作用域中的变量对象
 
-![Keep Track of Values](http://i1.piimg.com/582676/89bfbfbecd2565e4.png)
+![Keep Track of Values](/images/2016-12-20-in-memory/3.png)
 
 #### 4. 调用createFunction函数
 
@@ -73,7 +73,7 @@ related: [
 + 函数被调用时，创建变量对象，并为其中存储的数据开辟内存空间
 + 全局变量result中存放的是被返回的函数：闭包
 
-![调用createFunction函数](http://i1.piimg.com/582676/290fa25034b1d703.png)
+![调用createFunction函数](/images/2016-12-20-in-memory/4.png)
 
 #### 5. 调用result[0]函数
 
@@ -84,7 +84,7 @@ related: [
 + 变量查询根据函数的作用域链进行
 + 在createFunction函数的变量对象中找到`i`，得到其中存储的数据
 
-![调用result[0]函数](http://i1.piimg.com/582676/5cc78a001231d86e.png)
+![调用result[0]函数](/images/2016-12-20-in-memory/5.png)
 
 
 
