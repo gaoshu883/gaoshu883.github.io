@@ -7,7 +7,7 @@
       <time>{{ post.date | date: "%b %-d, %Y" }}</time>
       <span class="post-category">
         {% for category in post.categories %}
-          <a href="{{ site.baseurl | append: '2_category.html#' | append: category }}">{{ category }} </a>
+          <a href="{{ / | append: '2_category.html#' | append: category }}">{{ category }} </a>
         {% endfor %}
       </span>
     </div>
