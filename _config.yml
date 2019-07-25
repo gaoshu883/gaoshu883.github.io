@@ -1,15 +1,16 @@
 # Setup
-title:            Lu3Xiang
+encoding: 'utf-8'
+title: Lu3Xiang
 
 author:
-  name:           Xiaolu Wang
-  email:            gaoshu883@163.com
-tagline:          'Personal Blog'
-description:      '分享前端学习心得、体悟、感想、总结，生活随笔。作者 <a href="http://weibo.com/gaoshu883" target="_blank">@三水声香</a>'
-url:              http://www.lu3xiang.com
-baseurl:          /
+  name: Xiaolu Wang
+  email: gaoshu883@163.com
+tagline: 'Personal Blog'
+description: '分享前端学习心得、体悟、感想、总结，生活随笔。作者 <a href="http://weibo.com/gaoshu883" target="_blank">@三水声香</a>'
+url: http://www.lu3xiang.com
+baseurl: /
 
 markdown: kramdown
 
 github:
-  repo:           https://github.com/gaoshu883/gaoshu883.github.io
+  repo: https://github.com/gaoshu883/gaoshu883.github.io
