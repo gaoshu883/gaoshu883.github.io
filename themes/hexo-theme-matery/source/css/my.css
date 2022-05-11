@@ -28,3 +28,6 @@ html {
 @keyframes rainbow {
    /* 动态切换背景颜色. */
 }
+.card .card-image img {
+  filter: brightness(0.8);
+}
