@@ -1,1 +1,30 @@
 /* Here is your custom css styles. */
+@font-face {
+  font-family: 'LXGWWenKai';
+  src: url('/font/LXGWWenKai-Regular.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'LXGWWenKai';
+  src: url('/font/LXGWWenKai-Bold.ttf');
+  font-weight: bold;
+}
+
+html {
+  font-family: 'LXGWWenKai', sans-serif;
+}
+
+.bg-color {
+  background-image: linear-gradient(to right, #41b349 0%, #207f4c 100%);
+}
+.bg-cover:after {
+  background: rgba(32, 127, 76, 0.65);
+}
+@-webkit-keyframes rainbow {
+  /* 动态切换背景颜色. */
+}
+
+@keyframes rainbow {
+   /* 动态切换背景颜色. */
+}
