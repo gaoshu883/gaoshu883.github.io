@@ -1,20 +1,4 @@
 /* Here is your custom css styles. */
-@font-face {
-  font-family: 'LXGWWenKai';
-  src: url('/font/LXGWWenKai-Regular.ttf');
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: 'LXGWWenKai';
-  src: url('/font/LXGWWenKai-Bold.ttf');
-  font-weight: bold;
-}
-
-html {
-  font-family: 'LXGWWenKai', sans-serif;
-}
-
 .bg-color {
   background-image: linear-gradient(to right, #41b349 0%, #207f4c 100%);
 }
