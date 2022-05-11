@@ -1,0 +1,1080 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="利用Jekyll和GitHub Pages搭建静态博客网站, Gaoshu883">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>利用Jekyll和GitHub Pages搭建静态博客网站 | Gaoshu883</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Gaoshu883</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">利用Jekyll和GitHub Pages搭建静态博客网站</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/jekyll/">
+                                <span class="chip bg-color">jekyll</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                Web前端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2017-01-12
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.8k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>网站刚建成那会儿，写过一篇建站后感 *<a href="what-is-Jekyll.html">Jekyll到底是什么？</a>*，文章部分涉及如何利用Jekyll搭建个人博客，但主要还是抒发建站感想的。而现在这篇文章，则是完全围绕如何建站，希望按照这篇文章能够原样创建一个博客网站。</p>
+<h3 id="1-网站基础"><a href="#1-网站基础" class="headerlink" title="1. 网站基础"></a>1. 网站基础</h3><p><strong>何为网站</strong>：网页的集合</p>
+<p><strong>网站的组成要素</strong>：客户端、服务器端、网页、传输</p>
+<p><strong>各组成要素职责</strong>：</p>
+<ul>
+<li>客户端：显示网页</li>
+<li>服务器端：存储网页</li>
+<li>网页：呈现信息</li>
+<li>传输：网页的转移（信息的传输）</li>
+</ul>
+<p><strong>何为静态网站</strong>：网页事先编写好后存储在服务器端</p>
+<p><strong>何为动态网站</strong>：网页由服务器动态产生</p>
+<p><strong>何为Jekyll</strong>：帮助我们快速搭建静态网站，快速是指不用编写复杂的网页，只需会写markdown文档即可（当然你完全可以自己编写网站样式、添加必要的前端交互效果）</p>
+<p><strong>目标</strong>：将网站托管在github上，然后借助Jekyll快速搭建静态网站</p>
+<h3 id="2-使用GitHub-Pages服务"><a href="#2-使用GitHub-Pages服务" class="headerlink" title="2. 使用GitHub Pages服务"></a>2. 使用GitHub Pages服务</h3><p>在GitHub上创建存放网站全部数据的仓库：</p>
+<ul>
+<li>在GitHub上创建一个名为username.github.io的仓库，username是你的GitHub用户名</li>
+<li>为便于本地操作，通过git clone，把这个仓库克隆到本地硬盘上</li>
+<li>当然，你完全可以在GitHub网页上直接操作</li>
+</ul>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages官方网站</a></li>
+</ul>
+<h3 id="3-使用Jekyll"><a href="#3-使用Jekyll" class="headerlink" title="3. 使用Jekyll"></a>3. 使用Jekyll</h3><p>Jekyll是运行在Ruby平台上的程序，所以：</p>
+<ul>
+<li>首先搭建Jekyll工作环境</li>
+<li>然后安装Jekyll工具</li>
+<li>全部安装成功后，使用Jekyll工具</li>
+</ul>
+<h4 id="3-1-搭建Jekyll工作环境"><a href="#3-1-搭建Jekyll工作环境" class="headerlink" title="3.1 搭建Jekyll工作环境"></a>3.1 搭建Jekyll工作环境</h4><p>提前说明：下述步骤基于window10系统</p>
+<ol>
+<li>安装 Ruby &amp; Ruby Development Kit (下载网址：<a target="_blank" rel="noopener" href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a> )</li>
+<li>切换到Devkit的安装目录下，然后执行 <code>ruby dk.rb init</code></li>
+<li><code>ruby dk.rb install</code></li>
+<li><code>gem sources --add http://gems.ruby-china.org/ --remove http://rubygems.org/</code></li>
+<li><code>gem install jekyll</code></li>
+<li><code>gem install bundler</code></li>
+</ol>
+<p><strong>注释</strong></p>
+<ul>
+<li>dk.rb我认为是devkit ruby的缩写</li>
+<li>DevKit 是windows平台下编译和使用本地C&#x2F;C++扩展包的工具。它就是用来模拟Linux平台下的make, gcc, sh来进行编译</li>
+<li>DevKit 与gem的安装和更新有关，也就是说dk.rb的初始化和安装与gem有关</li>
+<li>修改gem下载源地址是为了避免出现SSL问题</li>
+<li><code>gem install jekyll bundler</code>是同时安装jekyll和bundler的指令</li>
+<li>安装bundler是为了运行jekyll，直接运行<code>jekyll</code>可能会报错，通过<code>bundle exec jekyll</code>正常执行</li>
+<li>到此，环境已经搭建完成</li>
+</ul>
+<h4 id="3-2-利用Jekyll建站（快速上手版）"><a href="#3-2-利用Jekyll建站（快速上手版）" class="headerlink" title="3.2 利用Jekyll建站（快速上手版）"></a>3.2 利用Jekyll建站（快速上手版）</h4><ol>
+<li>切换至username.github.io目录下</li>
+<li><code>jekyll new .</code></li>
+<li>打开Gemfile配置文件，添加<code>gem &#39;wdm&#39;, &#39;&gt;= 0.1.0&#39;</code>代码（如果电脑系统是windows的话，否则跳过这一步）</li>
+<li>在Gemfile中删除<code>gem &quot;jekyll&quot;</code>,增加<code>gem &quot;github-pages&quot;</code>（使用github pages服务）</li>
+<li>执行<code>bundle install</code>指令</li>
+<li><code>bundle exec jekyll serve</code></li>
+<li>浏览博客网站：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a></li>
+</ol>
+<h4 id="3-3-利用Jekyll建站（基础详解版）"><a href="#3-3-利用Jekyll建站（基础详解版）" class="headerlink" title="3.3 利用Jekyll建站（基础详解版）"></a>3.3 利用Jekyll建站（基础详解版）</h4><p>当<code>jekyll new .</code>时，Jekyll网站自动搭建，如下所示：</p>
+<pre><code>.(username.github.io)
+├── _drafts 博文草稿
+|   ├── begin-with-the-crazy-ideas.md
+|   └── on-simplicity-in-technology.md
+├── _includes 网页基本组件
+|   ├── footer.html
+|   └── header.html
+├── _layouts 网页模板
+|   ├── default.html
+|   └── post.html
+├── _posts 博文
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+|   └── 2009-04-26-barcamp-boston-4-roundup.md
+├── _site `Jekyll build`生成的网站，在上传到github上时应忽略
+├── css 网站样式
+|   ├── main.css
+|   └── reset.css
+├── _config.yml 网站配置文件
+├── index.html 网站首页
+├── Gemfile 项目配置文件
+├── README.md 版本项目文档
+└── .gitignore
+</code></pre>
+<p>除此之外 ，可自行按照网站目录树，手动创建所需文件。</p>
+<p><strong>说明</strong></p>
+<ul>
+<li><code>jekyll new .</code>自动创建的文档和上述目录树并不完全一样</li>
+<li>_config.yml是Jekyll网站的配置文件（内含网站相关信息，例如域名、作者、邮编、分页等等），而Gemfile是项目的配置文件（内含项目开发所需依赖项和下载源等），是利用gem进行包管理时必须的配置文件</li>
+<li>_layouts、_includes内文档均为html类型，采用Liquid模板语言进行编写</li>
+<li>确保username.github.io仓库中的目录结构和配置文件符合<a target="_blank" rel="noopener" href="http://jekyllrb.com/docs/structure/">Jekyll官方文档</a>的定义和要求</li>
+</ul>
+<p>当满足：</p>
+<ul>
+<li>网站目录符合文档规范</li>
+<li>Gemfile配置文件完成</li>
+</ul>
+<p>运行Jekyll生成网站：</p>
+<ol>
+<li><code>bundle install</code></li>
+<li><code>bundle exec jekyll serve</code></li>
+<li>浏览博客网站：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a></li>
+</ol>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html">如何在windows平台上安装jekyll</a></li>
+<li><a target="_blank" rel="noopener" href="http://gems.ruby-china.org/">完整RrubyGem镜像</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/chziroy/article/details/38837715">【总结】Jekyll搭建博客</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/hutaoer/archive/2013/02/06/3078873.html">win7下安装jekyll——在github上创建自己的博客</a></li>
+<li><a target="_blank" rel="noopener" href="http://sunxboy.iteye.com/blog/2171688">安装Jekyll Gem一直报Unable to download data from https://rubygems.org/的解决方案</a></li>
+<li><a target="_blank" rel="noopener" href="http://jmcglone.com/guides/github-pages/">Creating and Hosting a Personal Site on GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/">Build A Blog With Jekyll And GitHub Pages</a></li>
+<li><a target="_blank" rel="noopener" href="https://havee.me/internet/2013-11/jekyll-liquid-designers.html">Jekyll 扩展的 Liquid 设计</a></li>
+</ul>
+<h3 id="4-编写Markdown文档"><a href="#4-编写Markdown文档" class="headerlink" title="4. 编写Markdown文档"></a>4. 编写Markdown文档</h3><h4 id="4-1-标题"><a href="#4-1-标题" class="headerlink" title="4.1 标题"></a>4.1 标题</h4><pre><code># 一级标题
+## 二级标题
+### 三级标题
+……
+###### 六级标题
+</code></pre>
+<p>符号与标题之间<strong>空一格</strong>，是标准的语法表示。</p>
+<p><strong>标题还可以用下面的语法</strong></p>
+<pre><code>这是大标题
+=
+
+这是小标题
+-
+</code></pre>
+<p><strong>这里要提示：</strong></p>
+<ul>
+<li>单个回车是空格</li>
+<li>连续回车才是分段</li>
+<li>行尾加两个空格，再回车，即可行内换行</li>
+<li>头尾加*，表示斜体</li>
+<li>头尾加**，表示粗体</li>
+</ul>
+<p><strong>还要提示：</strong></p>
+<p>行的开头空四个格，表示程序代码</p>
+<h4 id="4-2-引用"><a href="#4-2-引用" class="headerlink" title="4.2 引用"></a>4.2 引用</h4><blockquote>
+<p><code>&gt;</code>表示引用</p>
+</blockquote>
+<h4 id="4-3-列表"><a href="#4-3-列表" class="headerlink" title="4.3 列表"></a>4.3 列表</h4><ul>
+<li>无序列表前加<code>-</code> or  <code>*</code> or <code>+</code></li>
+<li>有序列表加数字</li>
+</ul>
+<p><strong>注意</strong> 符号和列表项之间需要用空格分隔，就像标题的语法</p>
+<h4 id="4-4-链接"><a href="#4-4-链接" class="headerlink" title="4.4 链接"></a>4.4 链接</h4><p><code>[]</code>中是你需要进行超链接的文本内容，后面紧跟着一对<code>()</code>,括号里面是URL。</p>
+<p>我试着写了一个：</p>
+<p><code>[百度一下，你就知道](http://www.baidu.com/)</code><a target="_blank" rel="noopener" href="http://www.baidu.com/">百度一下，你就知道</a></p>
+<p>图像和链接非常相似，只是在前面多加一个<code>!</code></p>
+<p>此外还可以以索引的形式把url都列在文章的最后，例如：</p>
+<pre><code>[图灵社区][1]
+![图灵社区logo][2]
+[1]:http://www.ituring.com.cn
+[2]:http://www.ituring.com.cn/Content/img/Turing.Gif
+</code></pre>
+<h4 id="4-5-其他"><a href="#4-5-其他" class="headerlink" title="4.5 其他"></a>4.5 其他</h4><hr>
+<p><code>---</code>表示一条分割线<br>但是，要注意：<code>---</code>之后要回车</p>
+<p><strong>注释</strong></p>
+<ol>
+<li>编写Markdown文档的时候，最好每一行后面都连续回车，行内想要换行的话，就用两个空格再回车</li>
+<li>Markdown语言中存在HTML文档中的行内和块的概念，使用某些Markdown标记，即使不连续回车，也是换行的效果，例如<code>#</code>标题标记；而有些标记，例如<code>* *</code>强调标记，则就是行内标记；且注意行内标记后需空一格</li>
+<li>使用Markdown编辑出来的文本，都是预制<code>CSS</code>格式，那么可以通过哪些方式修改CSS格式，美化输出的Markdown文档呢？<br>（在Markdown的文档开头添加<code>CSS</code>文档链接即可）</li>
+<li>参考资料中提到<code>图床</code>的概念，是否为：Web中存储图片的地方，便于使用链接？<br>（图床：就是专门用来存放图片，同时允许你把图片对外连接的网上空间，不少图床都是免费的。）</li>
+<li>Markdown中可以使用html语法，例如：你想插入额外的空行，可以使用<code>&lt;br&gt;</code>标签。</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">gaoshu883</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gaoshu883.github.io/2017/01/12/2017-01-12-building-website-using-jekyll-and-githubpages/">https://gaoshu883.github.io/2017/01/12/2017-01-12-building-website-using-jekyll-and-githubpages/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">gaoshu883</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/jekyll/">
+                                    <span class="chip bg-color">jekyll</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2017/01/13/2017-01-13-tools-in-web-front-end/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Web前端工具分类">
+                        
+                        <span class="card-title">Web前端工具分类</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2017-01-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                    随笔
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2016/12/20/2016-12-20-in-memory-model-of-javascript-execution/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="JavaScript代码执行的in-memory-model">
+                        
+                        <span class="card-title">JavaScript代码执行的in-memory-model</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2016-12-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    Web前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2016-2022</span>
+            
+            <span id="year">2016</span>
+            <a href="/about" target="_blank">gaoshu883</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">15.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
