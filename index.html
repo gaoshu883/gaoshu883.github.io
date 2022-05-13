@@ -403,7 +403,7 @@
 
     
     
-    <div class="col s12" >
+    <div class="col s12 m6" >
         
             <div class="post-card" style="background-image: url('/medias/featureimages/5.jpg')">
             
@@ -418,8 +418,40 @@
                 <a href="/2017/03/19/2017-03-19-how-browser-works/">
                     <h3 class="post-title">浏览器的工作原理</h3>
                 </a>
-                <p class="post-description">1. 影响浏览器渲染方式的文档模式每个浏览器都有自己的页面渲染引擎。渲染引擎包括两部分：一部分负责 HTML、CSS 代码的解析（渲染引擎，如 blink 引擎 or 内</p>
+                <p class="post-description">
+                    
+                        1. 影响浏览器渲染方式的文档模式每个浏览器都有自己的页面渲染引擎。渲染引擎包括两部分：一部分负责 HTML、CSS 代码的解析（渲染引擎，
+                    
+                </p>
                 <a href="/2017/03/19/2017-03-19-how-browser-works/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" >
+        
+            <div class="post-card" style="background-image: url('/medias/featureimages/10.jpg')">
+            
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="category">算法</a>
+                        
+                    
+                </div>
+                <a href="/2022/05/13/2022-05-13-binary-search/">
+                    <h3 class="post-title">Binary Search 的原理</h3>
+                </a>
+                <p class="post-description">
+                    
+                        二分查找法背后的原理是：利用数据中的规律不断将搜索范围减半。
+                    
+                </p>
+                <a href="/2022/05/13/2022-05-13-binary-search/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
                     <i class="icon far fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -443,6 +475,53 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/05/13/2022-05-13-binary-search/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Binary Search 的原理">
+                            
+                            <span class="card-title">Binary Search 的原理</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                二分查找法背后的原理是：利用数据中的规律不断将搜索范围减半。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/">
+                            <span class="chip bg-color">二分法</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -493,23 +572,22 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2017/02/05/2017-02-05-build-local-server-for-ajax-development/">
+                    <a href="/2017/02/05/2017-02-05-build-a-local-server/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="搭建Ajax本地开发环境">
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="搭建本地Web开发环境">
                             
-                            <span class="card-title">搭建Ajax本地开发环境</span>
+                            <span class="card-title">搭建本地Web开发环境</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Ajax技术的目的在于实现异步请求，在不刷新整个页面的前提下，异步获取数据。
-Ajax开发测试环境基于Web+数据库服务器。
-搭建工具：phpStudy。
-phpStudy，该程序集成Apache（web server程序）+PHP（开发语
+                                Web前端开发、测试通常需用到本地服务器，对本地服务器的需求基本上分为两种：HTTP静态服务器和Web+数据库服务器。
+1. HTTP静态服务器功能：针对静态网页测试，不需和数据库交互；
+工具：推荐使用nodejs平台下的httpster程
                             
                         </div>
                         <div class="publish-info">
@@ -535,22 +613,23 @@ phpStudy，该程序集成Apache（web server程序）+PHP（开发语
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2017/02/05/2017-02-05-build-a-local-server/">
+                    <a href="/2017/02/05/2017-02-05-build-local-server-for-ajax-development/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="搭建本地Web开发环境">
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="搭建Ajax本地开发环境">
                             
-                            <span class="card-title">搭建本地Web开发环境</span>
+                            <span class="card-title">搭建Ajax本地开发环境</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Web前端开发、测试通常需用到本地服务器，对本地服务器的需求基本上分为两种：HTTP静态服务器和Web+数据库服务器。
-1. HTTP静态服务器功能：针对静态网页测试，不需和数据库交互；
-工具：推荐使用nodejs平台下的httpster程
+                                Ajax技术的目的在于实现异步请求，在不刷新整个页面的前提下，异步获取数据。
+Ajax开发测试环境基于Web+数据库服务器。
+搭建工具：phpStudy。
+phpStudy，该程序集成Apache（web server程序）+PHP（开发语
                             
                         </div>
                         <div class="publish-info">
@@ -799,26 +878,20 @@ phpStudy，该程序集成Apache（web server程序）+PHP（开发语
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2016/11/21/2016-11-21-basis-about-javascript-oop-3-this/">
+                    <a href="/2016/11/21/2016-11-21-basis-about-javascript-oop-2-closure/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript之OOP基础概念学习总结三：this">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JavaScript之OOP基础概念学习总结二：closure">
                             
-                            <span class="card-title">JavaScript之OOP基础概念学习总结三：this</span>
+                            <span class="card-title">JavaScript之OOP基础概念学习总结二：closure</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                更新于：2017年2月20日
-0. 序言关键字this是function中的一个参数，它和函数的普通参数有两点不同：
-
-this不需要另取名字
-this绑定值的方式不同（绑定值：this指向何值），一共有5种方式
-
-1. 关键字this与函
+                                闭包，我觉得并不具体指哪个函数，还是一种状态，也就是说当实际出现了满足闭包的状态时，我们就说这个是闭包。所以不能简单地把闭包理解成某个函数，毕竟看了那么多的资料，也没有感觉到到底应该把哪个函数称作闭包，最多也就是把回调函数叫做闭包。但仍有问
                             
                         </div>
                         <div class="publish-info">
@@ -852,20 +925,26 @@ this绑定值的方式不同（绑定值：this指向何值），一共有5种�
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2016/11/21/2016-11-21-basis-about-javascript-oop-2-closure/">
+                    <a href="/2016/11/21/2016-11-21-basis-about-javascript-oop-3-this/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JavaScript之OOP基础概念学习总结二：closure">
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript之OOP基础概念学习总结三：this">
                             
-                            <span class="card-title">JavaScript之OOP基础概念学习总结二：closure</span>
+                            <span class="card-title">JavaScript之OOP基础概念学习总结三：this</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                闭包，我觉得并不具体指哪个函数，还是一种状态，也就是说当实际出现了满足闭包的状态时，我们就说这个是闭包。所以不能简单地把闭包理解成某个函数，毕竟看了那么多的资料，也没有感觉到到底应该把哪个函数称作闭包，最多也就是把回调函数叫做闭包。但仍有问
+                                更新于：2017年2月20日
+0. 序言关键字this是function中的一个参数，它和函数的普通参数有两点不同：
+
+this不需要另取名字
+this绑定值的方式不同（绑定值：this指向何值），一共有5种方式
+
+1. 关键字this与函
                             
                         </div>
                         <div class="publish-info">
@@ -944,53 +1023,6 @@ this绑定值的方式不同（绑定值：this指向何值），一共有5种�
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2016/11/21/2016-11-21-knowing-about-web-world/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Web世界的上帝创物记">
-                            
-                            <span class="card-title">Web世界的上帝创物记</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                上帝创造了一切，这就是JavaScript故事的核心。曾经听过一句话，JavaScript这门语言的设计出发点，是基于人类世界进行的语言设计，也就是说，这门语言是面向对象的。面向对象，基于对象，就像人类世界，所有的活动也是基于对象的。面向对
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2016-11-21
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    Web前端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/javascript/">
-                            <span class="chip bg-color">javascript</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1038,7 +1070,7 @@ this绑定值的方式不同（绑定值：this指向何值），一共有5种�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.6k</span>&nbsp;字
+                class="white-color">15.9k</span>&nbsp;字
             
             
             
