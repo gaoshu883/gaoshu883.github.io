@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Jekyll到底是什么？, Gaoshu883">
+    <meta name="keywords" content="相向双指针算法, Gaoshu883">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Jekyll到底是什么？ | Gaoshu883</title>
+    <title>相向双指针算法 | Gaoshu883</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -196,12 +196,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Jekyll到底是什么？</h1>
+                    <h1 class="description center-align post-title">相向双指针算法</h1>
                 </div>
             </div>
         </div>
@@ -317,8 +317,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/jekyll/">
-                                <span class="chip bg-color">jekyll</span>
+                            <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
+                                <span class="chip bg-color">双指针</span>
                             </a>
                         
                     </div>
@@ -329,8 +329,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                Web前端
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -342,7 +342,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2016-11-08
+                    2022-05-16
                 </div>
                 
 
@@ -351,7 +351,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    598
                 </div>
                 
 
@@ -371,36 +371,131 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在搭建本博客网站的过程中，参考了很多的资料，回顾后发现，这一路上也是从按部就班到半主动性。按照搜索到的流程按部就班地操作，总不能达到理想的效果，卡住，卡住，再卡住，分外忧伤。事情可以慢下来，但不能放弃。后来我调整战略，尝试理解Jekyll的运作原理，事情慢慢变得清晰，有条不紊。这篇文章不会涉及到详细的建站过程，而是从另一个角度，简述Jekyll到底是如何发挥“魔力”的。</p>
-<h3 id="1-工作场所：Ruby平台"><a href="#1-工作场所：Ruby平台" class="headerlink" title="1. 工作场所：Ruby平台"></a>1. 工作场所：Ruby平台</h3><p>Jekyll是运行在Ruby平台上的程序，所以，最开始要搭建Jekyll的工作环境，然后再安装Jekyll工具，全部安装成功后，你就可以使用Jekyll这个强有力的工具了。</p>
-<p>具体步骤：</p>
-<blockquote>
+                <h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p>双指针算法常用于数组、字符串和链表等数据结构的搜索问题。双指针算法是原地算法，时间复杂度是<code>O(n)</code>，不使用额外的空间。根据指针的移动方向不同，又被分成：</p>
 <ul>
-<li>安装 Ruby &amp; Ruby Development Kit (下载网址：<a target="_blank" rel="noopener" href="http://rubyinstaller.org/downloads/">Ruby官网</a> )</li>
-<li>切换到Devkit的安装目录下，然后执行 ruby dk.rb init，Edit the generated config.yml file to include installed Rubies.(一般情况下，这个文件不需要修改，直接执行下一步即可)</li>
-<li>ruby dk.rb install</li>
-<li>gem sources –add <a target="_blank" rel="noopener" href="http://gems.ruby-china.org/">http://gems.ruby-china.org/</a> –remove <a target="_blank" rel="noopener" href="http://rubygems.org/">http://rubygems.org/</a></li>
-<li>gem install jekyll</li>
-<li>gem install bundler</li>
+<li>相向双指针</li>
+<li>同向双指针</li>
+<li>背向双指针</li>
 </ul>
-</blockquote>
-<h3 id="2-遵守Jekyll的规矩"><a href="#2-遵守Jekyll的规矩" class="headerlink" title="2. 遵守Jekyll的规矩"></a>2. 遵守Jekyll的规矩</h3><p>按规矩好办事。想要使用Jekyll，就必须遵守Jekyll的规矩，你只有按照Jekyll世界的语言、规范，它才能乖乖为你所用。都有哪些规矩：</p>
+<p>本文的重点是<code>相向双指针</code>。</p>
+<h2 id="问题类型"><a href="#问题类型" class="headerlink" title="问题类型"></a>问题类型</h2><p>相向双指针常用于解决的问题类型如下所示：</p>
 <ul>
-<li>2.1 网站项目的文件结构（结构）</li>
-<li>2.2 HTML模板语言要求（模板和数据注入）</li>
+<li>Two Sum</li>
+<li>Partition</li>
+<li>Reverse</li>
 </ul>
-<p>当然，具体的规矩全部都在官方文档中。</p>
-<h3 id="3-中场反思"><a href="#3-中场反思" class="headerlink" title="3. 中场反思"></a>3. 中场反思</h3><p>当你按照上述规矩，老老实实地把网站需要的全部数据都整理好后，就欠东风了。那么要怎样运行Jekyll，让它把我们准备的这些原材料，加工成真实网站呢？</p>
-<h3 id="4-配置你的Jekyll工具"><a href="#4-配置你的Jekyll工具" class="headerlink" title="4. 配置你的Jekyll工具"></a>4. 配置你的Jekyll工具</h3><p>使用它，那就先配置它吧。所以，你还需要编写一个Gemfile文件。在这个文件中，需要列举你的网站项目中所有将要使用到的工具，比如jekyll，jekyll plugins等等，当然你还要提供，下载这些工具的地址，例如<code>http://rubygems.org</code>。</p>
-<h3 id="5-使用Jekyll工具"><a href="#5-使用Jekyll工具" class="headerlink" title="5. 使用Jekyll工具"></a>5. 使用Jekyll工具</h3><p>到这里，所有的配置都搞定了。接下来就开始使用Jekyll工具，施展魔法，把我们的原始材料(符合Jekyll文档规范)加工成真实网站。运行以下步骤：</p>
-<ul>
-<li>5.1 bundle install</li>
-<li>5.2 bundle exec Jekyll serve</li>
+<p>其中，<code>Two Sum</code> 和 <code>Partition</code> 更为常见，它们的对比分析如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>Two Sum</th>
+<th>Partition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>问题描述</td>
+<td>查找满足条件的具体方案或方案数量</td>
+<td>分割数组，把相同类型的元素划分到一起</td>
+</tr>
+<tr>
+<td>数据结构</td>
+<td><strong>有序</strong>的数组</td>
+<td>数组，不要求有序</td>
+</tr>
+<tr>
+<td>变形</td>
+<td>三数之和、四数之和、k 数之和<br>三角形个数<br>…</td>
+<td>分割成三组、k 组…</td>
+</tr>
+</tbody></table>
+<h2 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h2><p>两数之和</p>
+<h3 id="算法模板"><a href="#算法模板" class="headerlink" title="算法模板"></a>算法模板</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">two_sum</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> nums<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+    left<span class="token punctuation">,</span> right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+        total <span class="token operator">=</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
+        <span class="token keyword">if</span> total <span class="token operator">&lt;</span> target<span class="token punctuation">:</span>
+            left <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">elif</span> total <span class="token operator">></span> target<span class="token punctuation">:</span>
+            right <span class="token operator">-=</span> <span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span>left<span class="token punctuation">,</span> right<span class="token punctuation">]</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="LintCode-练习题"><a href="#LintCode-练习题" class="headerlink" title="LintCode 练习题"></a>LintCode 练习题</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/56/">56 简单</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/607/">607 简单</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/57/">57 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/58/">58 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/382/">382 中等</a></li>
 </ul>
-<p><strong>解释：</strong><code>bundle install</code>之后，便把我们列举在配置文件中的工具全部安装起来（拿起我们的魔术棒）；运行<code>bundle exec jekyll serve</code>，Jekyll开始实时工作，即通过它提供的本地服务器进行本地预览（无需联网），你对文件所做的修改，都会直接反映出来，<code>localhost:4000</code>刷新后，便能看到修改后的效果。</p>
-<p>还要继续解释一下<code>jekyll serve</code>：前台所做的各种修改，都会被后台运行的Jekyll实时地加工、“翻译”、“施展魔法”成真实网站，而且，你能够通过<code>localhost:4000</code>本地预览网站。此外，你可以和<code>jekyll build</code>做对比：<code>jekyll build</code>只是将原始材料“翻译”成真实网站（_site文件夹出现），实现<code>jekyll serve</code>的部分功能，但是不会像<code>Jekyll serve</code>那样，可以本地预览，实时加工。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>当然，上述步骤2-5.1可以通过运行<code>jekyll new your-website-name</code>命令，利用Jekyll自动生成网站结构、Gemfile预定义配置以及相关工具的安装。这也是网上大部分的流程步骤。不过，有关网站的具体内容还是要你自己探索，虽然生成的网站也是有预定义的内容的（也就是Jekyll Theme），但太过简单，你肯定不会特别满意。这里插一句话，Jekyll Theme其实就是一个完整的Website了。你如果从GitHub上fork了一个你相中的主题，只需要修改一下网站的名称等原作者相关信息后，就可以变成你的网站了。</p>
-<h3 id="结尾反思"><a href="#结尾反思" class="headerlink" title="结尾反思"></a>结尾反思</h3><p>在参考的资料中有两篇印象特别深刻，<a target="_blank" rel="noopener" href="http://jmcglone.com/guides/github-pages/">一篇</a>是在github上利用github提供的接口原生态的实践jekyll的全部步骤。这篇很基础，给我提供了别样的思路，让我能够深入地思考jekyll的运作原理。<a target="_blank" rel="noopener" href="https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/">另外一篇</a>是传授我们如何利用GitHub上的Jekyll Theme快速搭建自己的博客网站，让我更进一步理解Jekyll文件的编写、HTML模板语法的使用等，让我渐渐不再对Jekyll感到束手无策、毫无头绪，不会再有那种它就是我眼前，却远在天边的感觉。</p>
+<h3 id="哈希表解法"><a href="#哈希表解法" class="headerlink" title="哈希表解法"></a>哈希表解法</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">two_sum</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token builtin">hash</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token comment"># 缓存等待成对的 value-index 映射</span>
+
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> target <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">in</span> <span class="token builtin">hash</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token builtin">hash</span><span class="token punctuation">[</span>target <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> i<span class="token punctuation">]</span>
+        <span class="token builtin">hash</span><span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
+
+    <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h3><p><code>Two Sum</code> 变形题中求解具体方案的算法复杂度如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>题型</th>
+<th>独立随机变量数</th>
+<th>求具体方案的算法复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x+y &#x3D; a, a 是常数</td>
+<td>1</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>x+y+z &#x3D; 0</td>
+<td>2</td>
+<td>O(n^2)</td>
+</tr>
+<tr>
+<td>w+x+y+z &#x3D; 0</td>
+<td>3</td>
+<td>O(n^3)</td>
+</tr>
+<tr>
+<td>x+y &gt; z</td>
+<td>3</td>
+<td>O(n^3)</td>
+</tr>
+</tbody></table>
+<h2 id="Partition"><a href="#Partition" class="headerlink" title="Partition"></a>Partition</h2><p><code>partition</code> 算法用于分割数组，有些时候只是解决另一个问题的其中一步。比如在“交错正负数”里，可以先用<code>partition</code> 把数组划分成正、负两部分，然后再交换。又比如在“快速排序”中，<code>partition</code> 划分数组是其核心步骤。</p>
+<h3 id="算法模板-1"><a href="#算法模板-1" class="headerlink" title="算法模板"></a>算法模板</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">partition</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    将 nums 分割成 &lt;= target 和 > target 两部分
+    '''</span>
+    left<span class="token punctuation">,</span> right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> left <span class="token operator">&lt;=</span> right<span class="token punctuation">:</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;=</span> right <span class="token keyword">and</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> target<span class="token punctuation">:</span>
+            left <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;=</span> right <span class="token keyword">and</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">></span> target<span class="token punctuation">:</span>
+            right <span class="token operator">-=</span> <span class="token number">1</span>
+        <span class="token keyword">if</span> left <span class="token operator">&lt;=</span> right<span class="token punctuation">:</span>
+            nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
+            left <span class="token operator">+=</span> <span class="token number">1</span>
+            right <span class="token operator">-=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="LintCode-练习题-1"><a href="#LintCode-练习题-1" class="headerlink" title="LintCode 练习题"></a>LintCode 练习题</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/373/">373 简单</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/49/">49 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/144/">144 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/148/">148 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/143/">143 中等</a></li>
+</ul>
 
                 
             </div>
@@ -427,7 +522,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gaoshu883.github.io/2016/11/08/2016-11-08-what-is-jekyll/">https://gaoshu883.github.io/2016/11/08/2016-11-08-what-is-jekyll/</a>
+                    <a href="https://gaoshu883.github.io/2022/05/16/2022-05-16-two-pointers/">https://gaoshu883.github.io/2022/05/16/2022-05-16-two-pointers/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -465,8 +560,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/jekyll/">
-                                    <span class="chip bg-color">jekyll</span>
+                                <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
+                                    <span class="chip bg-color">双指针</span>
                                 </a>
                             
                         </div>
@@ -510,76 +605,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2016/11/11/2016-11-11-think-about-python/">
+                <a href="/2022/05/16/2022-05-16-two-pointers/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Python自学起步心得">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="相向双指针算法">
                         
-                        <span class="card-title">Python自学起步心得</span>
+                        <span class="card-title">相向双指针算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2016-11-11
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
-                                    随笔
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2016/11/08/2016-11-08-what-is-jekyll/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Jekyll到底是什么？">
-                        
-                        <span class="card-title">Jekyll到底是什么？</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
+                            双指针算法是原地算法，时间复杂度是O(n)，不使用额外的空间。相向双指针常用于解决的问题类型包括 Two Sum、Partition 等。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2016-11-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    Web前端
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
@@ -590,8 +645,57 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jekyll/">
-                        <span class="chip bg-color">jekyll</span>
+                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
+                        <span class="chip bg-color">双指针</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/13/2022-05-13-binary-search/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Binary Search 的原理">
+                        
+                        <span class="card-title">Binary Search 的原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            二分查找法背后的原理是：利用数据中的规律不断将搜索范围减半。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/">
+                        <span class="chip bg-color">二分法</span>
                     </a>
                     
                 </div>
