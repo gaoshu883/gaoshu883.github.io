@@ -41,7 +41,7 @@ def binary_search(nums, target):
 
     return -1
 ```
-上述[算法模板](https://github.com/ninechapter-algorithm/linghu-algorithm-templete)巧妙运用了 `start + 1 < end` 的循环条件，确保程序不会出现死循环，因为很多时候会因为**临界点的判断**而出现问题。循环结束后，再根据`[start, end]`区间端点的数值进行取舍。
+上述[算法模板](https://github.com/ninechapter-algorithm/linghu-algorithm-templete)巧妙运用了 `start + 1 < end` 的循环条件，确保程序不会出现死循环，因为很多时候会因为**临界点的判断**而出现问题。循环结束后，再根据`[start, end]`区间端点的数值进行取舍，最后还要注意 fallback 的取值，不同类型的问题，fallback 不同，比如模版这里的 -1，表示没有找到 target。
 
 ## LintCode 练习题
 
