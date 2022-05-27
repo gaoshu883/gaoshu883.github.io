@@ -351,7 +351,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    598
+                    703
                 </div>
                 
 
@@ -478,6 +478,9 @@
     <span class="token triple-quoted-string string">'''
     将 nums 分割成 &lt;= target 和 > target 两部分
     '''</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> nums<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+
     left<span class="token punctuation">,</span> right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
     <span class="token keyword">while</span> left <span class="token operator">&lt;=</span> right<span class="token punctuation">:</span>
         <span class="token keyword">while</span> left <span class="token operator">&lt;=</span> right <span class="token keyword">and</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> target<span class="token punctuation">:</span>
@@ -487,7 +490,28 @@
         <span class="token keyword">if</span> left <span class="token operator">&lt;=</span> right<span class="token punctuation">:</span>
             nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
             left <span class="token operator">+=</span> <span class="token number">1</span>
-            right <span class="token operator">-=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+            right <span class="token operator">-=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果分割成三部分，可以使用两次双指针<code>partition</code>，或者直接使用三根指针，模板如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">partition2</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> low<span class="token punctuation">,</span> high<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    将 nums 分成三部分： &lt;low 、 >high 、 >=low and &lt;=high
+    '''</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> nums<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+    
+    left<span class="token punctuation">,</span> right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+    i <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> i <span class="token operator">&lt;=</span> right<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> low<span class="token punctuation">:</span>
+            nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
+            left <span class="token operator">+=</span> <span class="token number">1</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> high<span class="token punctuation">:</span>
+            nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
+            right <span class="token operator">-=</span> <span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="LintCode-练习题-1"><a href="#LintCode-练习题-1" class="headerlink" title="LintCode 练习题"></a>LintCode 练习题</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/373/">373 简单</a></li>
@@ -842,7 +866,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">17.6k</span>&nbsp;字
+                class="white-color">17.7k</span>&nbsp;字
             
             
             
