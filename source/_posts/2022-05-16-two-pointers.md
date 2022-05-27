@@ -101,6 +101,9 @@ def partition(nums, target):
     '''
     将 nums 分割成 <= target 和 > target 两部分
     '''
+    if not nums:
+        return
+
     left, right = 0, len(nums) - 1
     while left <= right:
         while left <= right and nums[left] <= target:
@@ -111,6 +114,29 @@ def partition(nums, target):
             nums[left], nums[right] = nums[right], nums[left]
             left += 1
             right -= 1
+```
+如果分割成三部分，可以使用两次双指针`partition`，或者直接使用三根指针，模板如下：
+```python
+def partition2(nums, low, high):
+    '''
+    将 nums 分成三部分： <low 、 >high 、 >=low and <=high
+    '''
+    if not nums:
+        return
+    
+    left, right = 0, len(nums) - 1
+    i = 0
+    while i <= right:
+        if nums[i] < low:
+            nums[left], nums[i] = nums[i], nums[left]
+            left += 1
+            i += 1
+        elif nums[i] > high:
+            nums[right], nums[i] = nums[i], nums[right]
+            right -= 1
+        else:
+            i += 1
+
 ```
 
 ### LintCode 练习题
