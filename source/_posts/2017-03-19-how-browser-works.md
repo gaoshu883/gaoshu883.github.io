@@ -4,7 +4,6 @@ title: "浏览器的工作原理"
 date: 2017-03-19
 tag: ["javascript"]
 category: ["Web前端"]
-top: true
 ---
 
 ### 1. 影响浏览器渲染方式的文档模式
