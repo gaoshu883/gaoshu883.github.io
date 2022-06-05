@@ -1,7 +1,7 @@
 ---
 title: 二叉树与分治法
 date: 2022-05-28
-tag: ['二叉树', '分治法', 'BST']
+tag: ['二叉树', '分治法', 'DFS']
 category: ['算法']
 top: true
 summary: 
