@@ -1,0 +1,1133 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="二叉树与分治法, Gaoshu883">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>二叉树与分治法 | Gaoshu883</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Gaoshu883</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">二叉树与分治法</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                <span class="chip bg-color">二叉树</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%88%86%E6%B2%BB%E6%B3%95/">
+                                <span class="chip bg-color">分治法</span>
+                            </a>
+                        
+                            <a href="/tags/DFS/">
+                                <span class="chip bg-color">DFS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-05-28
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.7k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p>二叉树是一种天然适配分治法的数据结构，许多二叉树问题都可以使用“分而治之”的思想来解决。遇到二叉树问题，就想想<strong>整棵树的结果与它左右子树的结果有什么关系</strong>。</p>
+<p>分治法天然适配“递归”程式，所以，很多分治问题都可以用递归函数实现。但递归函数不是唯一的实现方式。</p>
+<h3 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h3><p>二叉树的遍历方式有两类、四种：</p>
+<ul>
+<li>深度优先遍历<ul>
+<li>前序</li>
+<li>中序</li>
+<li>后序</li>
+</ul>
+</li>
+<li>宽度优先遍历<ul>
+<li>层序</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/2022-05-28/1.jpg" alt="二叉树的遍历"></p>
+<p>从图中可以看出，在深度优先遍历中，即使有前中后三种类型，但遍历的路径是一样的，不同的只是访问根节点的时机。</p>
+<h3 id="二叉树分治法模板"><a href="#二叉树分治法模板" class="headerlink" title="二叉树分治法模板"></a>二叉树分治法模板</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">divide_conquer</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 1. 递归出口</span>
+    <span class="token keyword">if</span> root <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> something
+    <span class="token comment"># 2. 处理左右子树</span>
+    left_result <span class="token operator">=</span> divide_conquer<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+    right_result <span class="token operator">=</span> divide_conquer<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+    <span class="token comment"># 3. 合并结果</span>
+    result <span class="token operator">=</span> left_result <span class="token operator">+</span> right_result <span class="token operator">+</span> root
+    
+    <span class="token keyword">return</span> result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>重点提炼：</p>
+<ul>
+<li>分治法的关键在于合并左右子树结果得到最终结果</li>
+<li><strong>分治法不使用全局变量</strong>，递归函数有返回值</li>
+<li>若使用了全局变量，说明用到了遍历法思想</li>
+</ul>
+<h3 id="非递归中序遍历"><a href="#非递归中序遍历" class="headerlink" title="非递归中序遍历"></a>非递归中序遍历</h3><p>非递归解法是指使用栈数据结构，手动回溯，实现深度优先遍历。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">inorder_traversal</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> root <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 1. 创建 dummy node （虚拟节点）</span>
+    dummy <span class="token operator">=</span> TreeNode<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    dummy<span class="token punctuation">.</span>right <span class="token operator">=</span> root <span class="token comment"># 很巧妙的设计</span>
+    stack <span class="token operator">=</span> <span class="token punctuation">[</span>dummy<span class="token punctuation">]</span>
+
+    inorder <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># 访问栈</span>
+    <span class="token keyword">while</span> stack<span class="token punctuation">:</span>
+        <span class="token comment"># pop -> 回溯</span>
+        <span class="token comment"># push 右子树根节点</span>
+        <span class="token comment"># push          所有的左子树（深度优先遍历右子树）</span>
+        node <span class="token operator">=</span> stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> node<span class="token punctuation">.</span>right<span class="token punctuation">:</span>
+            cur_root <span class="token operator">=</span> node<span class="token punctuation">.</span>right
+            <span class="token keyword">while</span> cur_root<span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur_root<span class="token punctuation">)</span>
+                node <span class="token operator">=</span> node<span class="token punctuation">.</span>left
+        <span class="token keyword">if</span> stack<span class="token punctuation">:</span>
+            inorder<span class="token punctuation">.</span>append<span class="token punctuation">(</span>stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> inorder<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>重点提炼：</p>
+<ol>
+<li>总是要一次性把左子树节点入栈，这也是深度优先的本质所在</li>
+<li>当左子树为空，通过<strong>出栈实现回溯</strong>，再压入右子树根节点</li>
+<li>重复步骤 1 的操作</li>
+</ol>
+<h3 id="最近公共祖先-LCA"><a href="#最近公共祖先-LCA" class="headerlink" title="最近公共祖先 (LCA)"></a>最近公共祖先 (LCA)</h3><h4 id="题型"><a href="#题型" class="headerlink" title="题型"></a>题型</h4><ul>
+<li>有父指针：找到两个点的路径，从根开始比较，最后一个相同的点是他们的 LCA</li>
+<li>无父指针：分治法。下列解法仅针对 A、B 两点一定存在的情景，如果 A、B 两点不一定存在，递归函数需要额外返回 A、B 是否存在。<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    @param: root: The root of the binary tree.
+    @param: A: A TreeNode in a Binary.
+    @param: B: A TreeNode in a Binary.
+    @return: Return the least common ancestor(LCA) of the two nodes.
+    """</span>
+    <span class="token keyword">def</span> <span class="token function">lowestCommonAncestor</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">,</span> A<span class="token punctuation">,</span> B<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> root <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">None</span>
+        <span class="token comment"># 1. 根节点是 A or B，祖先就是 root</span>
+        <span class="token keyword">if</span> root <span class="token operator">==</span> A <span class="token keyword">or</span> root <span class="token operator">==</span> B<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> root
+        <span class="token comment"># 左右子树递归</span>
+        left <span class="token operator">=</span> self<span class="token punctuation">.</span>lowestCommonAncestor<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> A<span class="token punctuation">,</span> B<span class="token punctuation">)</span>
+        right <span class="token operator">=</span> self<span class="token punctuation">.</span>lowestCommonAncestor<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> A<span class="token punctuation">,</span> B<span class="token punctuation">)</span>
+        <span class="token comment"># 2. 左右子树分别存在A、B祖先，则 root 为 A、B 祖先</span>
+        <span class="token keyword">if</span> left <span class="token keyword">and</span> right<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> root
+        <span class="token comment"># 3. LCA 在左子树</span>
+        <span class="token keyword">if</span> left<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> left
+        <span class="token comment"># 4. LCA 在右子树</span>
+        <span class="token keyword">if</span> right<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> right
+        
+        <span class="token keyword">return</span> <span class="token boolean">None</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p><code>git rebase</code> 用到了 LCA。<code>git rebase</code>和<code>git merge</code>的功能相似，用于合并两个分支的代码，只不过相较于<code>merge</code>，使用<code>rebase</code>可以让提交历史变成一条线。<code>git rebase</code>的工作流程和原理是：</p>
+<ul>
+<li>假设我们处于<code>feature</code>分支，执行<code>git rebase master</code>用于合并<code>master</code>分支的代码</li>
+<li>git 先找到<code>feature</code>和<code>master</code>俩分支的最近公共祖先 (LCA)</li>
+<li>将<code>feature</code>分支上 LCA 之后的 commit 以<code>master</code>为基创建新的 commit</li>
+</ul>
+<p><img src="/images/2022-05-28/2.jpg" alt="git rebase"></p>
+<h2 id="二叉搜索树-BST"><a href="#二叉搜索树-BST" class="headerlink" title="二叉搜索树 (BST)"></a>二叉搜索树 (BST)</h2><p>性质：中序遍历有序（单调不减）</p>
+<p>基本操作：创建、遍历、查找、插入、删除</p>
+<h3 id="BST的构造"><a href="#BST的构造" class="headerlink" title="BST的构造"></a>BST的构造</h3><p><strong>如何从有序数组中构造平衡二叉搜索树？</strong></p>
+<p>最先想到的可能是构造普通BST的方法：遍历数组，依次向树中插入节点。很明显，这样的方法会导致基于有序数组构造出来的二叉树退化为链表。为了保证平衡，左右子树的节点数量最好平分，然后这样递归下去，这棵二叉树就一定是平衡的了。所以，只需要把数组平分成两部分，确保每部分都是一棵平衡二叉树，那么最终整棵树就是平衡的。</p>
+<h3 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h3><p><strong>如果这个节点的值已存在，怎么办？</strong></p>
+<p>当插入一个节点，若它不和树上已有值重复，则它一定是以叶子节点的身份插入。若有重复，可以让新节点作为重复点右子树最小点的左子树（当右子树存在时）。</p>
+<h3 id="BST的修剪"><a href="#BST的修剪" class="headerlink" title="BST的修剪"></a>BST的修剪</h3><p>特别喜欢下面这个解决方案，很奇妙！</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    @param root: given BST
+    @param minimum: the lower limit
+    @param maximum: the upper limit
+    @return: the root of the new tree 
+    """</span>
+    <span class="token keyword">def</span> <span class="token function">trim_b_s_t</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">:</span> TreeNode<span class="token punctuation">,</span> minimum<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> maximum<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> TreeNode<span class="token punctuation">:</span>
+        <span class="token comment"># write your code here</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> root<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">None</span>
+        
+        <span class="token comment"># 之所以要修剪，是因为有满足条件的、还有不满足条件的</span>
+        <span class="token comment"># 丢弃完全不满足条件的（副作用在这里）</span>
+        <span class="token keyword">if</span> minimum <span class="token operator">&lt;=</span> root<span class="token punctuation">.</span>val <span class="token operator">&lt;=</span> maximum<span class="token punctuation">:</span>
+            <span class="token comment"># 左右枝都得修剪</span>
+            root<span class="token punctuation">.</span>left <span class="token operator">=</span> self<span class="token punctuation">.</span>trim_b_s_t<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> minimum<span class="token punctuation">,</span> maximum<span class="token punctuation">)</span>
+            root<span class="token punctuation">.</span>right <span class="token operator">=</span> self<span class="token punctuation">.</span>trim_b_s_t<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> minimum<span class="token punctuation">,</span> maximum<span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> root<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> minimum<span class="token punctuation">:</span>
+            <span class="token comment"># 直接丢弃左枝，同时继续修剪右枝</span>
+            root <span class="token operator">=</span> self<span class="token punctuation">.</span>trim_b_s_t<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> minimum<span class="token punctuation">,</span> maximum<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token comment"># 直接丢弃右枝，同时继续修剪左枝</span>
+            root <span class="token operator">=</span> self<span class="token punctuation">.</span>trim_b_s_t<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> minimum<span class="token punctuation">,</span> maximum<span class="token punctuation">)</span>
+        
+        <span class="token keyword">return</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="BST上查找"><a href="#BST上查找" class="headerlink" title="BST上查找"></a>BST上查找</h3><p>这类问题和<a href="/2022/05/13/2022-05-13-binary-search/#%E9%97%AE%E9%A2%98%E7%B1%BB%E5%9E%8B">二分查找题型</a>相似。要么是查找 target，要么是查找最接近 target 的某（几）个值。</p>
+<p>暴力解法：先中序遍历得到有序数组，然后再利用二分查找解决问题。这个解法比较容易想到和理解。</p>
+<p>分治法：</p>
+<ul>
+<li>先思考“整棵树的结果与它左右子树的结果有什么关系”</li>
+<li>以“查找最接近 target 的某个值”问题为例，整棵树的结果，是<code>[左子树的最接近值、根的值、右子树的最接近值]</code>中与 target 最接近的值，这部分也是算法的核心<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    @param root: the given BST
+    @param target: the given target
+    @return: the value in the BST that is closest to the target
+    """</span>
+    <span class="token keyword">def</span> <span class="token function">closest_value</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># write your code here</span>
+        <span class="token comment"># 如何使用分治法解决此题</span>
+        <span class="token comment"># 左孩子、根、右孩子</span>
+        <span class="token keyword">if</span> root <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token string">"inf"</span><span class="token punctuation">)</span>
+        left_val <span class="token operator">=</span> self<span class="token punctuation">.</span>closest_value<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> target<span class="token punctuation">)</span>
+        right_val <span class="token operator">=</span> self<span class="token punctuation">.</span>closest_value<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> target<span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>val <span class="token operator">-</span> target<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>left_val <span class="token operator">-</span> target<span class="token punctuation">)</span> <span class="token keyword">and</span> \
+        <span class="token builtin">abs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>val <span class="token operator">-</span> target<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>right_val <span class="token operator">-</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> root<span class="token punctuation">.</span>val
+        <span class="token keyword">if</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>left_val <span class="token operator">-</span> target<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>right_val <span class="token operator">-</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> left_val
+        <span class="token keyword">return</span> right_val<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>即使去查找k个最接近的值，分治法的解法也是类似的，即从<code>左子树的k个值、[根的值]、右子树的k个值</code>中返回最接近的k个值。</li>
+</ul>
+<h3 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h3><p>本质上也是平衡二叉树（Self-balancing binary search tree），但是它是相对平衡，不似 AVL (Adelson-Velsky and Landis Tree) 那样严格保证左右子树高度相差不超过 1。</p>
+<h2 id="LintCode-练习题"><a href="#LintCode-练习题" class="headerlink" title="LintCode 练习题"></a>LintCode 练习题</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/67/">67 简单</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/1359/">1359 简单</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/85/">85 简单</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/701/">701 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/86/">86 困难</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/900/">900 简单</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/901/">901 困难</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/902/">902 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/453/">453 简单</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/596/">596 简单</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/474/">474 简单</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/88/">88 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/578/">578 中等</a></li>
+</ul>
+<p>参考资料：<br><a target="_blank" rel="noopener" href="https://zh.m.wikipedia.org/zh-hans/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86">图片1来源</a><br><a target="_blank" rel="noopener" href="https://www.daolf.com/posts/git-series-part-2/">图片2来源</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">gaoshu883</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gaoshu883.github.io/2022/05/28/2022-05-28-binary-tree/">https://gaoshu883.github.io/2022/05/28/2022-05-28-binary-tree/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">gaoshu883</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                    <span class="chip bg-color">二叉树</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%88%86%E6%B2%BB%E6%B3%95/">
+                                    <span class="chip bg-color">分治法</span>
+                                </a>
+                            
+                                <a href="/tags/DFS/">
+                                    <span class="chip bg-color">DFS</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/05/28/2022-05-28-binary-tree/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="二叉树与分治法">
+                        
+                        <span class="card-title">二叉树与分治法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="chip bg-color">二叉树</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%86%E6%B2%BB%E6%B3%95/">
+                        <span class="chip bg-color">分治法</span>
+                    </a>
+                    
+                    <a href="/tags/DFS/">
+                        <span class="chip bg-color">DFS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/19/2022-05-19-bfs/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="宽度优先搜索精华总结">
+                        
+                        <span class="card-title">宽度优先搜索精华总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/BFS/">
+                        <span class="chip bg-color">BFS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2016-2022</span>
+            
+            <span id="year">2016</span>
+            <a href="/about" target="_blank">gaoshu883</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">19.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
