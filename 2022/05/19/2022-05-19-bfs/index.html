@@ -444,7 +444,7 @@
 &#x3D; O(V) + O(V * Eaj) 
 &#x3D; O(V) + O(E)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>其中，E 为图中所有的边。</p>
-<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>此类问题出现在有向无环图中，在于找到一个可执行的序列。比如大学选课问题，N 种课程因前后依赖关系构成一张图，让找出一种课程学习的顺序。</p>
+<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>此类问题出现在有向无环图中，在于找到一个可执行的序列，此序列包含图中<strong>所有顶点</strong>。比如大学选课问题，N 种课程因前后依赖关系构成一张图，让找出一种课程学习的顺序。</p>
 <h3 id="算法模板-1"><a href="#算法模板-1" class="headerlink" title="算法模板"></a>算法模板</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> collections <span class="token keyword">import</span> deque
 
 <span class="token keyword">def</span> <span class="token function">get_indegrees</span><span class="token punctuation">(</span>nodes<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -645,16 +645,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/DFS/">
+                        <span class="chip bg-color">DFS</span>
+                    </a>
+                    
                     <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
                         <span class="chip bg-color">二叉树</span>
                     </a>
                     
                     <a href="/tags/%E5%88%86%E6%B2%BB%E6%B3%95/">
                         <span class="chip bg-color">分治法</span>
-                    </a>
-                    
-                    <a href="/tags/DFS/">
-                        <span class="chip bg-color">DFS</span>
                     </a>
                     
                 </div>
