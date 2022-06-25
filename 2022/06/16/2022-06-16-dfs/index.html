@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript之OOP基础概念学习总结二：closure, Gaoshu883">
+    <meta name="keywords" content="深度优先搜索精华总结, Gaoshu883">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JavaScript之OOP基础概念学习总结二：closure | Gaoshu883</title>
+    <title>深度优先搜索精华总结 | Gaoshu883</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -196,12 +196,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript之OOP基础概念学习总结二：closure</h1>
+                    <h1 class="description center-align post-title">深度优先搜索精华总结</h1>
                 </div>
             </div>
         </div>
@@ -317,8 +317,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/javascript/">
-                                <span class="chip bg-color">javascript</span>
+                            <a href="/tags/DFS/">
+                                <span class="chip bg-color">DFS</span>
                             </a>
                         
                     </div>
@@ -329,8 +329,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                Web前端
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -342,7 +342,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2016-11-21
+                    2022-06-16
                 </div>
                 
 
@@ -351,7 +351,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    563
+                    1.2k
                 </div>
                 
 
@@ -371,10 +371,93 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>闭包，我觉得并不具体指哪个函数，还是一种状态，也就是说当实际出现了满足闭包的状态时，我们就说这个是闭包。所以不能简单地把闭包理解成某个函数，毕竟看了那么多的资料，也没有感觉到到底应该把哪个函数称作闭包，最多也就是把回调函数叫做闭包。但仍有问题，因为我在用Chrome开发者工具进行JavaScript代码调试时发现，解释器将回调函数定义时所在的外层函数称为闭包。所以，我觉得闭包并不具体指哪个函数，而是指一种状态：<br><strong>当一个函数cb在另一个函数outer内定义，但也可以在outer函数之外调用（通常都是在global scope中进行调用），那么这种情况就叫做闭包。</strong>很明显，这个状态其实一共牵涉到两个主要函数，被调用的函数，以及函数被定义时的外层函数。</p>
-<p>之所以闭包会是大家一个关注的重点，是因为JavaScript语言中，闭包结构设计的便利性。这门语言规定，你在定义域之外进行函数的调用，依然可以访问到原定义域中的变量（这种情况便是闭包效应）。也就是说，即使外层函数已经返回，按道理（一般情况下）也就失去了存在的意义，但是JavaScript允许闭包效应，所以你还是可以继续访问到外层函数中定义的变量，从而使得一切变得简单起来。</p>
-<p>当然也会有不好的地方，比如，闭包存在，肯定会占用更多的内存空间。这是因为，既然你能够继续访问到原则上已经失去意义的外层函数，说明外层函数的内存占用并没有被标记作废。所以，原本要被清除的空间依旧存在，无形中就占用了更多的内存空间，会影响到程序运行时的性能。</p>
-<p>总结：闭包效应是JavaScript语言设计中的必然存在，是有意为之的语言结构。</p>
+                <h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p>DFS 会优先考虑最近新遇到的搜索状态，所以算法会沿着一条路一直往下走，直到遇到目标状态或者走到底。如果走到底，就后退一步，换条路继续走。同一个路径中不走重复点，不同的路径可能会走重复点。</p>
+<p>在总结<a href="/2022/05/28/2022-05-28-binary-tree/">二叉树</a>相关问题时，深度优先搜索已经用起来了，只不过被归结为“分治法”。分治法的核心是权衡<strong>整棵树的结果与它左右子树的结果有什么关系</strong>，通常利用递归函数来实现。</p>
+<p>不仅仅是二叉树，我们还可能面对数组、图等数据结构，本文将总结更多有关深度优先搜索的应用。</p>
+<h2 id="二叉树中的应用"><a href="#二叉树中的应用" class="headerlink" title="二叉树中的应用"></a>二叉树中的应用</h2><p>请查看<a href="/2022/05/28/2022-05-28-binary-tree/">二叉树与分治法</a>。</p>
+<h2 id="数组中的应用"><a href="#数组中的应用" class="headerlink" title="数组中的应用"></a>数组中的应用</h2><p>对数组元素的<strong>排列和组合</strong>会用到 DFS。在解决排列和组合问题时，我们会构造出一棵 N 叉树的解空间。比如数组<code>[1,2,3]</code>的所有子集可表示成下图：<br><img src="/images/2022-06-16/dfs.jpg" alt="[1,2,3]的(a)所有子集(b)全排列"></p>
+<p>也就是说，即使面对的是数组，但解决的问题本质还是树的遍历或搜索。既然是普通树的搜索问题，也就可以沿用二叉树的解决思路，考量<strong>整棵树的结果与它各个子树的结果有什么关系</strong>。</p>
+<p>我们更常使用递归函数实现数组中的 DFS 算法，时间复杂度为：O(方案总数 * 每个方案所花费的时间)。</p>
+<h3 id="所有组合"><a href="#所有组合" class="headerlink" title="所有组合"></a>所有组合</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> index<span class="token punctuation">,</span> root_paths<span class="token punctuation">,</span> results<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    @param nums: 原始输入数组
+    @param index: 父级路径中最后一点在 nums 中的索引
+    @param root_paths: 父级路径，也就是已经访问过的点列表
+    @param results: 答案列表
+    '''</span>
+    <span class="token keyword">if</span> 递归出口<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+    results<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root_paths<span class="token punctuation">)</span>
+    <span class="token comment"># 遍历每个孩子，向前看不走回头路</span>
+    <span class="token comment"># 从 index+1 开始，确保是未访问的点</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 如果有重复元素则跳过</span>
+        <span class="token comment"># i - 1 和 i 都是没有访问过的</span>
+        <span class="token keyword">if</span> i <span class="token operator">></span> index <span class="token operator">+</span> <span class="token number">1</span> <span class="token keyword">and</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+        <span class="token comment"># 深拷贝得到孩子节点</span>
+        root_list_with_child <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        root_list_with_child<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        dfs<span class="token punctuation">(</span>nums<span class="token punctuation">,</span> i<span class="token punctuation">,</span> root_list_with_child<span class="token punctuation">,</span> results<span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>重点提炼：</p>
+<ul>
+<li>将该模板与<strong>二叉树分治法模板</strong>对比，可以看出，两个算法的本质是相似的，都是将任务交给<strong>每个孩子</strong>递归处理。</li>
+<li>解决此类问题的口诀是：<span style="color:red">访问根节点，分配孩子做</span>，问题的难点在于“找孩子”。</li>
+<li>什么时候需要<strong>有序</strong>的数组：<ul>
+<li>题目要求每个组合中的元素必须有序</li>
+<li>数组中有重复元素时，排序有助去重</li>
+</ul>
+</li>
+</ul>
+<h3 id="全排列"><a href="#全排列" class="headerlink" title="全排列"></a>全排列</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> visited<span class="token punctuation">,</span> root_paths<span class="token punctuation">,</span> results<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    @param nums: 原始输入数组
+    @param visited: 某条路径上已经访问过的点索引集合
+    @param root_paths: 父级路径，也就是已经访问过的点列表
+    '''</span>
+    <span class="token comment"># 找到了一种全排列</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>root_paths<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        results<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root_paths<span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+    <span class="token comment"># 分配孩子去做事情</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 排除掉 root_paths，其他都是孩子</span>
+        <span class="token comment"># root_paths 都是 visited 的</span>
+        <span class="token keyword">if</span> i <span class="token keyword">in</span> visited<span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+        <span class="token comment"># 如果有重复元素则跳过</span>
+        <span class="token comment"># i - 1 和 i 都是没有访问过的，则 i-1 和 i 都是孩子索引</span>
+        <span class="token keyword">if</span> i <span class="token operator">></span> <span class="token number">0</span> <span class="token keyword">and</span> i <span class="token operator">-</span> <span class="token number">1</span> <span class="token keyword">not</span> <span class="token keyword">in</span> visited <span class="token keyword">and</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+        
+        root_list_with_child <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>root_paths<span class="token punctuation">)</span>
+        root_list_with_child<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        visited_with_child <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span>visited<span class="token punctuation">)</span>
+        visited_with_child<span class="token punctuation">.</span>add<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+        dfs<span class="token punctuation">(</span>nums<span class="token punctuation">,</span> visited_with_child<span class="token punctuation">,</span> root_list_with_child<span class="token punctuation">,</span> results<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>重点提炼：</p>
+<ul>
+<li>数组中有重复元素时，需要先对数组进行排序</li>
+<li>visited 记录的是路径上已经走过的点</li>
+</ul>
+<h2 id="图中的应用"><a href="#图中的应用" class="headerlink" title="图中的应用"></a>图中的应用</h2><p>图上使用 DFS，必须记录<span style="color:red">已访问过</span>信息，而且这个信息是同一条链路上的，不同的链路不会共享该信息。解决此类问题，需要依循的核心是：</p>
+<p><strong>根据归并思想，采用递归函数，<span style="color:red">分配孩子去做事</span>。</strong></p>
+<p>解题时，就想想前面给出的模板，举一反三。题目难点往往在于<strong>终止递归的条件</strong>，因为提前终止是对算法的优化。</p>
+<h2 id="DFS-vs-BFS"><a href="#DFS-vs-BFS" class="headerlink" title="DFS vs BFS"></a>DFS vs BFS</h2><p>有关 BFS 的内容可以查看<a href="/2022/05/19/2022-05-19-bfs/">此文</a>，本文简要说明两种算法的不同。</p>
+<h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><p>DFS 和 BFS 都是要访问所有的孩子，不同的是，DFS 把孩子加入栈，BFS 把孩子加入队列。所以，DFS 总是处理最新发现的点，而 BFS 总是处理最先发现的点。取值顺序的不同，就造成了深度扩展和宽度扩展的区别。因此，BFS 具有天然寻找最短路径的属性，DFS 具有天然记录当前路径的属性。</p>
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p><strong>时间复杂度</strong> DFS 和 BFS 一致<br><strong>空间复杂度</strong> DFS 取决于深度， BFS 取决于宽度</p>
+<h2 id="LintCode-练习题"><a href="#LintCode-练习题" class="headerlink" title="LintCode 练习题"></a>LintCode 练习题</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/17/">17 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/18/">18 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/15/">15 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/16/">16 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/425/">425 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/90/">90 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/135/">135 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/132/">132 困难</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/121/">121 困难</a></li>
+</ul>
 
                 
             </div>
@@ -401,7 +484,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gaoshu883.github.io/2016/11/21/2016-11-21-basis-about-javascript-oop-2-closure/">https://gaoshu883.github.io/2016/11/21/2016-11-21-basis-about-javascript-oop-2-closure/</a>
+                    <a href="https://gaoshu883.github.io/2022/06/16/2022-06-16-dfs/">https://gaoshu883.github.io/2022/06/16/2022-06-16-dfs/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -439,8 +522,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/javascript/">
-                                    <span class="chip bg-color">javascript</span>
+                                <a href="/tags/DFS/">
+                                    <span class="chip bg-color">DFS</span>
                                 </a>
                             
                         </div>
@@ -484,46 +567,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2016/11/21/2016-11-21-basis-about-javascript-oop-1-scopes/">
+                <a href="/2022/06/16/2022-06-16-dfs/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JavaScript之OOP基础概念学习总结一：scopes">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="深度优先搜索精华总结">
                         
-                        <span class="card-title">JavaScript之OOP基础概念学习总结一：scopes</span>
+                        <span class="card-title">深度优先搜索精华总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            DFS 会优先考虑最近新遇到的搜索状态，所以算法会沿着一条路一直往下走，直到遇到目标状态或者走到底。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2016-11-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    Web前端
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/DFS/">
+                        <span class="chip bg-color">DFS</span>
                     </a>
                     
                 </div>
@@ -537,13 +622,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2016/11/21/2016-11-21-basis-about-javascript-oop-3-this/">
+                <a href="/2022/05/28/2022-05-28-binary-tree/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript之OOP基础概念学习总结三：this">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="二叉树与分治法">
                         
-                        <span class="card-title">JavaScript之OOP基础概念学习总结三：this</span>
+                        <span class="card-title">二叉树与分治法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -554,14 +639,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2016-11-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    Web前端
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
@@ -571,8 +656,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="chip bg-color">二叉树</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%86%E6%B2%BB%E6%B3%95/">
+                        <span class="chip bg-color">分治法</span>
+                    </a>
+                    
+                    <a href="/tags/DFS/">
+                        <span class="chip bg-color">DFS</span>
                     </a>
                     
                 </div>
