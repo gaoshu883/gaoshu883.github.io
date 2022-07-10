@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="搭建本地Web开发环境, Gaoshu883">
+    <meta name="keywords" content="哈希表精华总结, Gaoshu883">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>搭建本地Web开发环境 | Gaoshu883</title>
+    <title>哈希表精华总结 | Gaoshu883</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -196,12 +196,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">搭建本地Web开发环境</h1>
+                    <h1 class="description center-align post-title">哈希表精华总结</h1>
                 </div>
             </div>
         </div>
@@ -315,9 +315,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">
+                                <span class="chip bg-color">哈希表</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -325,8 +329,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                Web前端
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -338,7 +342,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2017-02-05
+                    2022-07-10
                 </div>
                 
 
@@ -347,7 +351,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    404
+                    444
                 </div>
                 
 
@@ -367,20 +371,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Web前端开发、测试通常需用到本地服务器，对本地服务器的需求基本上分为两种：HTTP静态服务器和Web+数据库服务器。</p>
-<h3 id="1-HTTP静态服务器"><a href="#1-HTTP静态服务器" class="headerlink" title="1. HTTP静态服务器"></a>1. HTTP静态服务器</h3><p><strong>功能：</strong>针对静态网页测试，不需和数据库交互；</p>
-<p><strong>工具：</strong>推荐使用nodejs平台下的httpster程序；</p>
-<p><strong>使用步骤：</strong></p>
-<ul>
-<li>安装nodejs，nodejs下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">https://nodejs.org/zh-cn/download/</a>；</li>
-<li>全局安装httpster命令行，官方地址：<a target="_blank" rel="noopener" href="https://simbco.github.io/httpster/">https://simbco.github.io/httpster/</a>；</li>
-<li>如果你需要nodejs平台下的httpster程序之外的程序，可以参考<a target="_blank" rel="noopener" href="https://gist.github.com/willurd/5720255">这里的列表</a>（包含各种开发平台下的程序），寻找适合你的静态web服务器程序。</li>
+                <p>哈希表是以 <code>key:value</code> 形式存储数据的数据结构，以 O(1) 的时间复杂度实现增删改查。哈希表的存储过程如下图所示：</p>
+<p><img src="/images/2022-07-10/hash-table.png" alt="哈希表原理示意图"></p>
+<p>哈希表的底层是列表，key 通过哈希函数转换到列表的索引，对应的索引位中存储了 value，而这个索引也叫做哈希值。</p>
+<h2 id="哈希函数的算法实现"><a href="#哈希函数的算法实现" class="headerlink" title="哈希函数的算法实现"></a>哈希函数的算法实现</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">hash_code</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> hash_size<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    @param key: 要被hash的字符串
+    @param hash_size: 哈希表的长度
+    '''</span>
+    ans <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> key<span class="token punctuation">:</span>
+        ans <span class="token operator">=</span> <span class="token punctuation">(</span>ans <span class="token operator">*</span> <span class="token number">33</span> <span class="token operator">+</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> hash_size
+    <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="哈希表的应用"><a href="#哈希表的应用" class="headerlink" title="哈希表的应用"></a>哈希表的应用</h2><p>哈希表一般用于构造各类复杂的数据结构，比如文本重点介绍的 LRU 算法。</p>
+<h3 id="LRU"><a href="#LRU" class="headerlink" title="LRU"></a>LRU</h3><p>LRU (Least Recently Used) 最近最少使用，是一种页面置换算法，用于操作系统的内存管理。一些内存数据库，例如 Redis 会将该算法用作缓存淘汰策略。之所以 LRU 热度高，是因为它的性能好，接近于最佳置换算法。</p>
+<p>与 LRU 算法类似的一种算法叫 LFU (Least Frequently Used) 最少访问算法。LRU 是时间维度上的度量，长时间没用到的数据优先考虑淘汰；而 LFU 是统计度量，使用次数最少的数据优先考虑淘汰。</p>
+<p>Python 中提供的 OrderedDict 数据类型可便于 LRU 算法的实现。OrderedDict 是 dict 子类，它保留了 <code>key:value</code> 插入字典的顺序。当更新某个 key 对应的 value 时，默认不会更新键值对的位置，可利用 <code>move_to_end</code> 方法手动将修改的键值对移动到最后。最后，可利用 <code>popitem</code> 方法按照“先进先出”或“后进先出”的规则删除键值对。</p>
+<h2 id="LintCode-练习题"><a href="#LintCode-练习题" class="headerlink" title="LintCode 练习题"></a>LintCode 练习题</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/128/">128 简单</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/685/">685 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/960/">960 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/657/">657 中等</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lintcode.com/problem/134/">134 困难</a></li>
 </ul>
-<h3 id="2-Web-数据库服务器"><a href="#2-Web-数据库服务器" class="headerlink" title="2. Web+数据库服务器"></a>2. Web+数据库服务器</h3><p><strong>功能：</strong>针对动态网站开发测试，能够动态生成web页面，能够和数据库交互；</p>
-<p><strong>工具：</strong>推荐使用phpstudy程序；除此之外，还可以使用XMAPP程序，但是这里推荐的phpstudy程序更加小巧方便，操作简单，容易上手。</p>
-<p><strong>工具简介：</strong>phpStudy，该程序集成Apache（web server程序）+PHP（开发语言）+MySQL（数据库程序）+phpMyAdmin（用PHP编写的，可以通过 web 方式控制和操作 MySQL 数据库）+ZendOptimizer。</p>
-<p><strong>使用步骤：</strong>具体使用步骤请参考<a href="build-local-server-for-ajax-development.html#post">搭建Ajax本地开发环境</a>这篇文章。</p>
-<h3 id="3-实现内网穿透"><a href="#3-实现内网穿透" class="headerlink" title="3. 实现内网穿透"></a>3. 实现内网穿透</h3><p>成功搭建本地Web开发环境后，你可能需要外网测试，比如应用PageSpeed Insight工具测试网站首屏渲染性能，此时你需要内网穿透技能，具体实现方法请参考<a href="build-a-local-server.html#post">本地开发外网调试：httpster和ngrok</a>。</p>
 
                 
             </div>
@@ -407,7 +420,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gaoshu883.github.io/2017/02/05/2017-02-05-build-a-local-server/">https://gaoshu883.github.io/2017/02/05/2017-02-05-build-a-local-server/</a>
+                    <a href="https://gaoshu883.github.io/2022/07/10/2022-07-10-hashtable/">https://gaoshu883.github.io/2022/07/10/2022-07-10-hashtable/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -444,7 +457,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">
+                                    <span class="chip bg-color">哈希表</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -486,17 +503,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2017/03/19/2017-03-19-how-browser-works/">
+                <a href="/2022/07/10/2022-07-10-hashtable/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="浏览器的工作原理">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="哈希表精华总结">
                         
-                        <span class="card-title">浏览器的工作原理</span>
+                        <span class="card-title">哈希表精华总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -506,26 +524,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2017-03-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    Web前端
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">
+                        <span class="chip bg-color">哈希表</span>
                     </a>
                     
                 </div>
@@ -539,36 +558,44 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/02/05/2017-02-05-build-local-server-for-ajax-development/">
+                <a href="/2022/06/16/2022-06-16-dfs/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="搭建Ajax本地开发环境">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="深度优先搜索精华总结">
                         
-                        <span class="card-title">搭建Ajax本地开发环境</span>
+                        <span class="card-title">深度优先搜索精华总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            DFS 会优先考虑最近新遇到的搜索状态，所以算法会沿着一条路一直往下走，直到遇到目标状态或者走到底。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2017-02-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    Web前端
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/DFS/">
+                        <span class="chip bg-color">DFS</span>
+                    </a>
+                    
                 </div>
                 
             </div>
