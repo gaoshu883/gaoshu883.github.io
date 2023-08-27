@@ -7,7 +7,7 @@ title: Clover Code
 subtitle: ''
 description: ''
 keywords:
-author: gaoshu883
+author: Wang Xiaolu
 language: en
 timezone: ''
 
@@ -108,7 +108,7 @@ deploy:
 
 theme_config:
   colorscheme: white
-  highlight: "arduino-light"
+  highlight: 'arduino-light'
   nav:
     home: /
     articles: /archives/
